@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import {RouteModule} from './route.module';
+import {HeadModule} from './head/head.module';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,10 @@ import {RouteModule} from './route.module';
   ],
   imports: [
     BrowserModule,
-    RouteModule
+    RouteModule,
+    HeadModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

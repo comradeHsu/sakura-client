@@ -1,0 +1,43 @@
+<!--登录注册 start-->
+<div class="jiemo-futurejap-loginbg"><!--显示增加active类-->
+  <ngb-alert [dismissible]="false"  *ngIf="fail" class="alert">
+    <strong>{{ message }}</strong>
+  </ngb-alert>
+  <div class="content-area">
+    <div class="left hidden-xs">
+      <img src="../../assets/images/img-login-1.jpg" alt="">
+    </div>
+    <div class="right">
+      <em class="close-window" (click)="closedDialog()">×</em>
+      <input type="hidden" id="actionType" value="0">
+      <!--登录 start-->
+      <div class="login-area login-tabarea">
+        <div class="title">
+          <h3>登录</h3>
+        </div>
+        <div class="form-area">
+          <div class="line-area">
+            <div class="input-area">
+              <input type="tel" class="form-control" [(ngModel)]="username" #ctrl placeholder="请输入你的手机号" id="login_tel" name="username" value="">
+            </div>
+          </div>
+          <div class="line-area">
+            <div class="input-area">
+              <input type="password" class="form-control" [(ngModel)]="password" #ctrl placeholder="请输入6-16位密码" id="login_pwd" name="password">
+            </div>
+          </div>
+          <div class="bottom-area">
+            <div class="checkbox-area pull-left">
+              <input type="checkbox">
+              自动登录
+            </div>
+            <a class="pull-right" href="javascript:user_pwd();">忘记密码</a>
+          </div>
+          <input class="btn-submit" type="button" value="登录" (click)="login()">
+          <a class="btn-tab pull-right" data-v="2" id="goReg">去注册</a>
+        </div>
+      </div>
+      <!--登录 end-->
+    </div>
+  </div>
+</div>

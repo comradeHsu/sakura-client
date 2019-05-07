@@ -1,0 +1,66 @@
+<!--头部 start-->
+<div class="container-fluid jiemo-futurejap-header">
+  <div class="row">
+    <!--国家选择 登录注册 start-->
+    <div class="container-fluid jiemo-futurejap-header-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-12 col-sm-12 left">
+            <img class="hidden-lg hidden-md" src="../../../assets/images/icon-logo-gray.png" alt="灰LOGO">
+            <span>全国咨询热线&ensp;120、110、119</span>
+          </div>
+          <div class="col-md-6 col-xs-6 center">
+            <!--PC端显示 start-->
+            <div class="pc-show hidden-xs hidden-md hidden-sm">
+              <a  href="#">北京</a>
+              <a  href="#">上海</a>
+              <a  href="#">广州</a>
+              <a  href="#">沈阳</a>
+              <a  href="#">大连</a>
+              <a  href="#">东京</a>
+            </div>
+            <!--PC端显示 end-->
+          </div>
+          <div class="col-md-3 col-xs-6 right">
+
+            <!--未登录 start-->
+            <div id="noLogin" *ngIf="!isLogin"><!--隐藏时增加jm-hidden类-->
+              <a href="javascript:;" (click)="willLogin()">登录</a>
+              <span>|</span>
+              <a href="javascript:;" onclick="user_reg()">注册</a>
+            </div>
+            <!--未登录 end-->
+            <div id="login" *ngIf="isLogin">
+              <span id="username"></span>
+              <span>|</span>
+              <a href="javascript:;" onclick="qc_logout()">退出</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid jiemo-futurejap-header-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-3" data-nav="1">
+            <a href="#">留学方案</a>
+          </div>
+          <div class="col-md-3 col-xs-3" data-nav="2">
+            <a href="#">院校库</a>
+          </div>
+          <div class="col-md-3" data-nav="3">
+            <a href="#">新闻资讯</a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">关于我们</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--第二行导航 end-->
+    <!--二级导航暂时删除-->
+  </div>
+</div>
+<app-login *ngIf="isWillLogin" (closeStatus)="closeLogin($event)"></app-login>
