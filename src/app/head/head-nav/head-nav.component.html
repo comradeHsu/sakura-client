@@ -27,13 +27,13 @@
             <div id="noLogin" *ngIf="!isLogin"><!--隐藏时增加jm-hidden类-->
               <a href="javascript:;" (click)="willLogin()">登录</a>
               <span>|</span>
-              <a href="javascript:;" onclick="user_reg()">注册</a>
+              <a href="javascript:;" (click)="willRegister()">注册</a>
             </div>
             <!--未登录 end-->
             <div id="login" *ngIf="isLogin">
-              <span id="username"></span>
+              <span id="username">欢迎您, {{ realName }}</span>
               <span>|</span>
-              <a href="javascript:;" onclick="qc_logout()">退出</a>
+              <a href="javascript:;" (click)="loginOut()" >退出</a>
             </div>
 
           </div>
@@ -63,4 +63,5 @@
     <!--二级导航暂时删除-->
   </div>
 </div>
-<app-login *ngIf="isWillLogin" (closeStatus)="closeLogin($event)"></app-login>
+<app-login *ngIf="isWillLogin" (closeStatus)="closeLogin($event)" (successLogin)="loginSuccess($event)"></app-login>
+<app-register *ngIf="isWillRegister"></app-register>

@@ -4,11 +4,13 @@ import {HeadNavComponent} from './head-nav/head-nav.component';
 import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     HeadNavComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
