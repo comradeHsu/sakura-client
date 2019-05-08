@@ -223,55 +223,22 @@
       <h3 class="col-md-12">新闻资讯</h3>
     </div>
     <div class="row row2">
-      <div class="col-md-3">
+      <div class="col-md-3" *ngFor="let article of articles">
         <a href="#">
           <div class="content">
             <div class="line-black"></div>
-            <span>2019-04-30</span>
-            <img src="../../assets/images/5c9449556e9c5.jpg" alt="新闻图">
-            <h4>日本22年后重启公立夜校，外国人可无偿就学！</h4>
+            <span>{{ article.createTime }}</span>
+            <img [src]="article.picture" alt="新闻图">
+            <h4>{{ article.title }}</h4>
             <p></p>
             <em>阅读全文<img src="../../assets/images/icon-arrow-r.png" alt="右箭头"></em>
           </div>
         </a>
-      </div><div class="col-md-3">
-      <a href="#">
-        <div class="content">
-          <div class="line-black"></div>
-          <span>2019-04-30</span>
-          <img src="../../assets/images/5cc7b56bd3f01.jpg" alt="新闻图">
-          <h4>三本毕业/无英语/N2只有100+的他是怎么内诺日本前20国立大学的？</h4>
-          <p>成功案例</p>
-          <em>阅读全文<img src="../../assets/images/icon-arrow-r.png" alt="右箭头"></em>
-        </div>
-      </a>
-    </div><div class="col-md-3">
-      <a href="#">
-        <div class="content">
-          <div class="line-black"></div>
-          <span>2019-04-25</span>
-          <img src="../../assets/images/5cac4fcf8078a.jpg" alt="新闻图">
-          <h4>来自东大开学式的毒鸡汤：即使努力也没有公平回报的社会正等着你</h4>
-          <p></p>
-          <em>阅读全文<img src="../../assets/images/icon-arrow-r.png" alt="右箭头"></em>
-        </div>
-      </a>
-    </div><div class="col-md-3">
-      <a href="#">
-        <div class="content">
-          <div class="line-black"></div>
-          <span>2019-04-25</span>
-          <img src="../../assets/images/5c2738b5e061b.jpg" alt="新闻图">
-          <h4>最新消息| 日本众议院官宣！大学教育无偿化法案通过！</h4>
-          <p></p>
-          <em>阅读全文<img src="../../assets/images/icon-arrow-r.png" alt="右箭头"></em>
-        </div>
-      </a>
-    </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-12 jm-tac">
-        <a href="news.html" class="btn-more">
+        <a routerLink="/news" class="btn-more">
           更多资讯
           <!--<i>&#10140</i>-->
         </a>

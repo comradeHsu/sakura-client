@@ -1,0 +1,86 @@
+.jiemo-futurejap-crumb {
+  padding-bottom: 5rem;
+}
+.jiemo-futurejap-crumb {
+  padding: 1.2rem 15px 6rem;
+  line-height: 30px;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.jiemo-futurejap-crumb span {
+  color: #b8b8b8;
+  font-size: 1rem;
+}
+.jiemo-futurejap-crumb a {
+  color: #b8b8b8;
+}
+.jiemo-futurejap-crumb b {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.jiemo-futurejap-newslist .news-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 0.25rem solid #333;
+  padding-bottom: 1rem;
+}
+.jiemo-futurejap-newslist .content {
+  padding-bottom: 3rem;
+}
+.jiemo-futurejap-newslist .content .col-md-3 {
+  margin: 1rem auto 2rem;
+  padding: 15px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.jiemo-futurejap-newslist .content .col-md-3 a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  overflow: hidden;
+}
+.jiemo-futurejap-newslist .content p {
+  margin-bottom: 0.4rem;
+  width: 100%;
+  height: 180px;
+  text-align: center;
+  overflow: hidden;
+}
+.jiemo-futurejap-newslist .content img {
+  height: 100%;
+}
+.jiemo-futurejap-newslist .content h3 {
+  border-top: 0.1rem solid #333;
+  font-size: 1.1rem;
+  font-weight: normal;
+  padding: 0.7rem 0;
+  line-height: 1.5rem;
+  height: 4.5rem;
+  overflow: hidden;
+}
+.jiemo-futurejap-newslist .content span {
+  font-size: 0.8rem;
+  color: #666;
+  overflow: hidden;
+}
+.jiemo-futurejap-newslist .content span i {
+  float: left;
+}
+.jiemo-futurejap-newslist .content span i img {
+  width: auto;
+  height: 1.2rem;
+  border: none;
+  margin-right: 0.3rem;
+  position: relative;
+  top: 0.1rem;
+}
+.jiemo-futurejap-newslist .content span em {
+  float: right;
+}
+.pagination {
+  text-align: center;
+  display: block;
+}

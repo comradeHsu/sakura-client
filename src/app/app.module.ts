@@ -8,19 +8,25 @@ import {HeadModule} from './head/head.module';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {FootComponent} from './head/foot/foot.component';
+import {NewsComponent} from './news/news.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {SchoolsComponent} from './schools/schools.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    FootComponent
+    FootComponent,
+    NewsComponent,
+    SchoolsComponent
   ],
   imports: [
     BrowserModule,
     RouteModule,
     HeadModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

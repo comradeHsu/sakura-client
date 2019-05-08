@@ -4,20 +4,26 @@ import {Article} from '../model/article';
 import {Page} from '../model/page';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.css']
 })
-export class IndexComponent implements OnInit {
+export class NewsComponent implements OnInit {
 
   constructor(private service: ArticleService) { }
   articles: Article[];
+  page = 1;
+  collectionSize: number = 0;
   ngOnInit() {
+    this.pageArticles();
+  }
+  pageArticles() {
     const page: Page = new Page();
-    page.page = 1;
-    page.pageCount = 4;
+    page.page = this.page;
+    page.pageCount = 12;
     this.service.getPageArticles(page).subscribe(res => {
       this.articles = res.data;
+      this.collectionSize = res.dataCount;
     });
   }
 

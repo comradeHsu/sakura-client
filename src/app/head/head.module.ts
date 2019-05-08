@@ -5,7 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './register/register.component';
-import { FootComponent } from './foot/foot.component';
+import {RouteModule} from '../route.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { FootComponent } from './foot/foot.component';
   imports: [
     CommonModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    RouteModule
   ],
   exports: [
     HeadNavComponent
