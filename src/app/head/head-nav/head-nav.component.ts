@@ -49,4 +49,8 @@ export class HeadNavComponent implements OnInit {
   willRegister() {
     this.isWillRegister = true;
   }
+
+  closeRegister(closed) {
+    this.isWillRegister = closed;
+  }
 }

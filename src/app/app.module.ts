@@ -7,11 +7,13 @@ import {RouteModule} from './route.module';
 import {HeadModule} from './head/head.module';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {FootComponent} from './head/foot/foot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    FootComponent
   ],
   imports: [
     BrowserModule,

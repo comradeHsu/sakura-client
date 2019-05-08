@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   }
 
   closedDialog() {
-    console.log(this.closed);
     this.closeStatus.emit(this.closed);
   }
 
