@@ -4,11 +4,11 @@ import {Article} from '../model/article';
 import {Page} from '../model/page';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.css']
 })
-export class IndexComponent implements OnInit {
+export class NewsComponent implements OnInit {
 
   constructor(private service: ArticleService) { }
   articles: Article[];

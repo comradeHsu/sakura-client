@@ -7,11 +7,13 @@ import {RouteModule} from './route.module';
 import {HeadModule} from './head/head.module';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {NewsComponent} from './news/news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
