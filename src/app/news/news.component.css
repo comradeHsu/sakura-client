@@ -80,3 +80,7 @@
 .jiemo-futurejap-newslist .content span em {
   float: right;
 }
+.pagination {
+  text-align: center;
+  display: block;
+}

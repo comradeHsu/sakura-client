@@ -5,7 +5,7 @@ export class ResponseResult {
   code: number;
   message: string;
   data: any;
-  totalCount?: number;
+  dataCount?: number;
   pageNumber?: number;
   pageSize?: number;
 }

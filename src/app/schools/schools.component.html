@@ -1,0 +1,200 @@
+<app-head-nav></app-head-nav>
+<div class="container-fluid jiemo-future-schoolsearch">
+  <div class="row">
+    <!--搜索条件 start-->
+    <form method="post" id="theform" name="theform" action="">
+      <!-- hidden -->
+      <input type="hidden" id="search_page" name="search_page" value="0">
+      <input type="hidden" id="search_country" name="search_country" value="4">
+      <input type="hidden" id="search_area" name="search_area" value="0">
+      <input type="hidden" id="search_city" name="search_city" value="0">
+      <input type="hidden" id="search_createtype" name="search_createtype" value="0">
+      <input type="hidden" id="search_direction" name="search_direction" value="0">
+      <input type="hidden" id="search_degree" name="search_degree" value="0">
+      <input type="hidden" id="search_ranking" name="search_ranking" value="0">
+      <input type="hidden" id="search_bada" name="search_bada" value="0">
+      <input type="hidden" id="submit_page" name="submit_page" value="">
+      <input type="hidden" id="search_de_course" name="search_de_course" value="0">
+      <!-- hidden -->
+      <div class="container search-area">
+        <div class="row">
+          <div class="col-md-12">
+            <ul>
+              <li>
+                <strong>学校名称：</strong>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="请输入学校中/英文名称" onkeypress=" if(event.keyCode==13) { $('#search_page').val(0);search(); return false;}" onkeyup="inputschoolchange(this)" id="search_sh_name" name="search_sh_name" value="">
+                  <span class="input-group-btn">
+                                <button class="btn btn-normal" type="button" onclick="$('#search_page').val(0);search();">查询</button>
+                              </span>
+                  <p class="wwinputlist_todo hidden">
+                    <a href="">dfgd</a>
+                  </p>
+                </div>
+                <div class="jm-cb"></div>
+              </li>
+              <li>
+                <strong>选择地区：</strong>
+                <div class="ctrl-select" data-toggle="distpicker">
+                  <div class="ctrl-select-area">
+                    <select data-province="全部地区1" id="theArea" onchange="$('#search_area').val($(this).val());$('#search_city').val('');$('#search_page').val(0);search();">
+                      <option value="0"> 全部地区</option>
+                      <option value="241"> 北海道 </option>
+                      <option value="242"> 东北 </option>
+                      <option value="243"> 关东 </option>
+                      <option value="244"> 北陆甲信越 </option>
+                      <option value="245"> 近畿 </option>
+                      <option value="246"> 中国四国 </option>
+                      <option value="247"> 东海 </option>
+                      <option value="248"> 九州冲绳 </option>
+                    </select>
+                    <i class="glyphicon glyphicon-triangle-bottom"></i></div>
+                  <div class="ctrl-select-area">
+                    <select data-city="全部城市" id="theCity" onchange="$('#search_city').val($(this).val());$('#search_page').val(0);search();">
+                      <option value="0"> 全部城市</option>
+                    </select>
+                    <i class="glyphicon glyphicon-triangle-bottom"></i></div>
+                </div>
+                <div class="jm-cb"></div>
+              </li>
+              <li>
+                <strong>国内排名：</strong>
+                <em onclick="changeRanking('');$('#search_page').val(0);search();" class="active">不限</em>
+                <em onclick="changeRanking('1');$('#search_page').val(0);search();" class="">1~10名</em>
+                <em onclick="changeRanking('2');$('#search_page').val(0);search();" class="">11~20名</em>
+                <em onclick="changeRanking('3');$('#search_page').val(0);search();" class="">21~50名</em>
+                <input type="text" class="normal-input" id="rank_min" name="rank_min" value="" maxlength="5">
+                <font>~</font>
+                <input type="text" class="normal-input" id="rank_max" name="rank_max" value="" maxlength="5">
+                <font>名</font>
+                <button class="btn btn-normal" type="button" onclick="$('#search_ranking').val('');search();">确定</button>
+                <div class="jm-cb"></div>
+              </li>
+              <li>
+                <strong>专业名称：</strong>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="请输入专业名称" onkeypress=" if(event.keyCode==13) { search(); return false;}" id="search_mj_name" name="search_mj_name" value="">
+                  <span class="input-group-btn">
+                                <button class="btn btn-normal" type="button" onclick="$('#search_page').val(0);search();">查询</button>
+                              </span>
+                </div>
+                <div class="ctrl-select marl2">
+                  <div class="ctrl-select-area">
+                    <select id="theCourse" onchange="$('#search_de_course').val($(this).val());$('#search_page').val(0);search();">
+                      <option value="0">全部意向课程</option>
+                      <option value="513"> 硕士 </option><option value="514"> 博士 </option><option value="524"> 专门职课程 </option><option value="1270"> 研究生 </option><option value="1838"> 本科 </option><option value="2218"> 高中 </option><option value="2219"> 大学别科 </option><option value="2221"> 专门学校日本语科 </option><option value="2222"> 专门学校专门学科 </option>                                    </select>
+                    <i class="glyphicon glyphicon-triangle-bottom"></i>
+                  </div>
+                  <div class="ctrl-select-area">
+                    <select id="theDirection" onchange="$('#search_direction').val($(this).val());$('#search_page').val(0);search();">
+                      <option value="0">全部专业方向</option>
+                      <option value="308"> 心理学 </option><option value="327"> 哲学・文化・歴史学 </option><option value="328"> 文学・言語学 </option><option value="329"> 教育学・心理学・社会学 </option><option value="330"> 法学・政治学・経済学 </option><option value="331"> 数物系科学・化学 </option><option value="332"> 工学 </option><option value="333"> 生物・農・獣医・水産学 </option><option value="334"> 医療・健康・スポーツ科学 </option><option value="335"> 生活科学 </option><option value="336"> 芸術学 </option><option value="337"> 情報学・環境学 </option><option value="338"> 総合・複合領域 </option><option value="339"> 传媒·旅游 </option>                                    </select>
+                    <i class="glyphicon glyphicon-triangle-bottom"></i>
+                  </div>
+                </div>
+                <div class="jm-cb"></div>
+              </li>                    </ul>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!--搜索条件 end-->
+    <!--结果列表 start-->
+
+    <style type="text/css">
+      .pager-container {
+        text-align: center;
+        padding: 40px 0 20px;
+      }
+
+      .pager li {
+        margin: 0 2px;
+      }
+
+      .pager li > a,
+      .pager li > span {
+        display: inline-block;
+        padding: 5px 14px;
+        border: 1px solid #ddd;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 0px;
+        color: #666666;
+      }
+
+      .pager li > a:hover, .pager li > a:focus {
+        border-color: #333;
+      }
+
+      .pager li > span {
+        color: #333;
+        border-color: #333;
+      }
+
+      .pager li > span.more {
+        background: transparent;
+        border: none;
+        color: #666666;
+      }
+    </style>
+    <div class="container end-area">
+      <div class="row">
+        <div class="col-md-12 list-header">
+          <h3>共找到<b>770</b>所学校</h3>
+        </div>
+        <div class="col-md-12">
+          <div class="list-area">
+            <div class="row">
+              <div class="col-md-2 col-xs-5">
+                <div class="img-area">
+                  <a href="http://www.qianchengriben.com/school/detail/id/382"><img src="http://imghome.jiemo.net/library/Admin/Uploads/image/2014/1023/20141023051142154.png" alt="学校logo"></a>
+                </div>
+              </div>
+              <div class="col-md-10 col-xs-7">
+                <h4>东京大学<font>/</font><span>The University of Tokyo</span></h4>
+                <p>世界排名：<span>23</span>
+                  国内排名：<span>
+                                                                            1                                </span></p>
+                <a href="http://www.qianchengriben.com/school/detail/id/382">查看详情 ➜</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--结果列表 end-->
+    <!--翻页 start-->
+    <!--<div class="container jiemo-futurejap-paged">-->
+    <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+    <!--<a class="active">1</a>&lt;!&ndash;选中增加active&ndash;&gt;-->
+    <!--<a>2</a>-->
+    <!--<a>3</a>-->
+    <!--<a>4</a>-->
+    <!--<a>5</a>-->
+    <!--<a>6</a>-->
+    <!--<a><i class="glyphicon glyphicon-menu-right"></i></a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <ul class="pager">
+      <div class="pager-container"><ul class="pager"><li><span>1</span></li><li><a data-value="2" href="javascript:changePage(2)">2</a></li><li><a data-value="3" href="javascript:changePage(3)">3</a></li><li><a data-value="4" href="javascript:changePage(4)">4</a></li><li><a data-value="5" href="javascript:changePage(5)">5</a></li><li>...</li><li><a data-value="77" href="javascript:changePage(77)">77</a></li><li><a data-value="2" href="javascript:changePage(2)">下一页</a></li></ul></div></ul>
+    <!--翻页 end-->
+
+
+    <script charset="utf-8" src="http://lxbjs.baidu.com/lxb.js?sid=6143283"></script><script charset="utf-8" src="http://ada.baidu.com/phone-tracker/insert_bdtj?sid=6143283"></script><script charset="utf-8" src="https://tag.baidu.com/vcard/v.js?siteid=6143283&amp;url=http%3A%2F%2Fwww.qianchengriben.com%2Fschool&amp;source=&amp;rnd=242930942&amp;hm=1"></script><script src="https://hm.baidu.com/hm.js?8c8311aaba0cf831a260dad4892ecae2"></script><script type="text/javascript">
+    function changePage(num){
+      $('#search_page').val(num);$('#submit_page').val(num);search();
+    }
+    // 百度统计
+    function baidu_count(opt, tag){
+      var cat = '院校库PC端';
+      opt += '（列表）';
+      tag = tag ? tag : '';
+      _hmt.push(['_trackEvent', cat, opt, tag] );
+    }
+  </script>
+
+  </div>
+</div>

@@ -15,18 +15,21 @@
   </div>
   <div class="row content">
     <!--循环 start，滚动到底部继续加载，每次加载12条-->
-    <div class="col-md-3">
+    <div class="col-md-3" *ngFor="let article of articles">
       <a href="http://www.qianchengriben.com/news/detail/id/236">
-        <p style="height: 168.32px;"><img src="http://www.qianchengriben.com/Uploads/Picture/2019-04-30/5cc7b56bd3f01.jpg" alt="" style="width: 100%;"></p>
-        <h3>日本22年后重启公立夜校，外国人可无偿就学！</h3>
+        <p style="height: 168.32px;"><img [src]="article.picture" alt="" style="width: 100%;"></p>
+        <h3>{{ article.title }}</h3>
         <span>
-                    <i><img src="/Public/Home/images/icon-news-1.png" alt="">828</i>
-                    <em>2019-04-30</em>
+                    <i><img src="http://www.qianchengriben.com/Public/Home/images/icon-news-1.png" alt="">{{ article.readCount }}</i>
+                    <em>{{ article.createTime }}</em>
                 </span>
       </a>
     </div>
     <!--循环 end-->
   </div>
   <!--翻页 start-->
+  <div class="pagination">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="pageArticles()"></ngb-pagination>
+  </div>
   <!--翻页 end-->
 </div>
