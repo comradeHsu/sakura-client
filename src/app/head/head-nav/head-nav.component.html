@@ -66,4 +66,4 @@
   </div>
 </div>
 <app-login *ngIf="isWillLogin" (closeStatus)="closeLogin($event)" (successLogin)="loginSuccess($event)"></app-login>
-<app-register *ngIf="isWillRegister" (closeRegister)="closeRegister($event)"></app-register>
+<app-register *ngIf="isWillRegister" (closeRegister)="closeRegister($event)" (toLogin)="gotoLogin()"></app-register>

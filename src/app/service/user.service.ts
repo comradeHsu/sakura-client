@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import {ResponseResult} from '../model/response';
+import {User} from "../model/user";
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,12 @@ export class UserService {
       .pipe(map(res => {
         return res as ResponseResult;
       }));
+  }
+
+  register(user: User): Observable<ResponseResult> {
+    const url = 'http://localhost:8080/api/user';
+    return this.http.post(url, user).pipe(map(res => {
+      return res as ResponseResult;
+    }));
   }
 }

@@ -1,5 +1,8 @@
 <!--登录注册 start-->
 <div class="jiemo-futurejap-loginbg"><!--显示增加active类-->
+  <ngb-alert [dismissible]="false"  *ngIf="fail" class="alert">
+    <strong>{{ message }}</strong>
+  </ngb-alert>
   <div class="content-area">
     <div class="left hidden-xs">
       <img src="../../assets/images/img-login-1.jpg" alt="">
@@ -16,17 +19,17 @@
         <div class="form-area">
           <div class="line-area">
             <div class="input-area size-small">
-              <input type="tel" placeholder="请输入你的手机号" id="reg_tel" name="reg_tel">
+              <input type="tel" placeholder="请输入你的手机号" [(ngModel)]="username" id="reg_tel" name="reg_tel">
             </div>
           </div>
           <div class="line-area">
             <div class="input-area">
-              <input type="password" placeholder="请输入6-16位密码" id="reg_pwd" name="reg_pwd">
+              <input type="password" placeholder="请输入6-16位密码" [(ngModel)]="password" id="reg_pwd" name="reg_pwd">
             </div>
           </div>
           <div class="line-area">
             <div class="input-area">
-              <input type="password" placeholder="请确认密码"  name="reg_pwd">
+              <input type="password" placeholder="请确认密码" [(ngModel)]="confirmPassword" name="reg_pwd">
             </div>
           </div>
           <div class="bottom-area">
@@ -34,9 +37,9 @@
               <input type="checkbox">
               记住密码
             </div>
-            <a class="btn-tab pull-right" data-v="1">去登录</a>
+            <a class="btn-tab pull-right" data-v="1" (click)="gotoLogin()">去登录</a>
           </div>
-          <input id="regBtn" class="btn-submit" type="button" value="注册" >
+          <input id="regBtn" class="btn-submit" type="button" (click)="userRegister()" value="注册" >
         </div>
       </div>
     </div>

@@ -145,8 +145,14 @@ img {
 }
  .btn-tab[data-v='2'] {
   color: #7e7e7e;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-top: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.jiemo-futurejap-loginbg .content-area .right .bottom-area a {
+  font-size: 1.1rem;
+  color: #7e7e7e;
   text-decoration: none;
   cursor: pointer;
 }

@@ -53,4 +53,9 @@ export class HeadNavComponent implements OnInit {
   closeRegister(closed) {
     this.isWillRegister = closed;
   }
+
+  gotoLogin() {
+    this.isWillRegister = false;
+    this.isWillLogin = true;
+  }
 }
