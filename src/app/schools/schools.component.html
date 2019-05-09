@@ -23,10 +23,10 @@
               <li>
                 <strong>学校名称：</strong>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="请输入学校中/英文名称" onkeypress=" if(event.keyCode==13) { $('#search_page').val(0);search(); return false;}" onkeyup="inputschoolchange(this)" id="search_sh_name" name="search_sh_name" value="">
+                  <input type="text" class="form-control"  [(ngModel)]="request.name" placeholder="请输入学校中/英文名称" id="search_sh_name" name="name" value="">
                   <span class="input-group-btn">
-                                <button class="btn btn-normal" type="button" onclick="$('#search_page').val(0);search();">查询</button>
-                              </span>
+                    <button class="btn btn-normal" type="button">查询</button>
+                  </span>
                   <p class="wwinputlist_todo hidden">
                     <a href="">dfgd</a>
                   </p>
@@ -37,21 +37,15 @@
                 <strong>选择地区：</strong>
                 <div class="ctrl-select" data-toggle="distpicker">
                   <div class="ctrl-select-area">
-                    <select data-province="全部地区1" id="theArea" onchange="$('#search_area').val($(this).val());$('#search_city').val('');$('#search_page').val(0);search();">
-                      <option value="0"> 全部地区</option>
-                      <option value="241"> 北海道 </option>
-                      <option value="242"> 东北 </option>
-                      <option value="243"> 关东 </option>
-                      <option value="244"> 北陆甲信越 </option>
-                      <option value="245"> 近畿 </option>
-                      <option value="246"> 中国四国 </option>
-                      <option value="247"> 东海 </option>
-                      <option value="248"> 九州冲绳 </option>
+                    <select data-province="全部地区" name="province" id="theArea" [(ngModel)]="parentId" (change)="getSubRegion()">
+                      <option value=""> 全部地区</option>
+                      <option *ngFor="let parentRegion of parentRegions" value="{{ parentRegion.id }}"> {{ parentRegion.address }} </option>
                     </select>
                     <i class="glyphicon glyphicon-triangle-bottom"></i></div>
                   <div class="ctrl-select-area">
-                    <select data-city="全部城市" id="theCity" onchange="$('#search_city').val($(this).val());$('#search_page').val(0);search();">
-                      <option value="0"> 全部城市</option>
+                    <select data-city="全部城市" id="theCity" name="city" [(ngModel)]="subId">
+                      <option value=""> 全部城市</option>
+                      <option *ngFor="let subRegion of subRegions" value="{{ subRegion.id }}"> {{ subRegion.address }} </option>
                     </select>
                     <i class="glyphicon glyphicon-triangle-bottom"></i></div>
                 </div>
