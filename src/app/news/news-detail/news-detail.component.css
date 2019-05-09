@@ -1,0 +1,88 @@
+.jiemo-futurejap-news {
+  background: #f7f7f9 url(../../../assets/images/bg-school.png) no-repeat bottom center;
+  background-size: 40%;
+}
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.jiemo-futurejap-crumb {
+  padding-bottom: 5rem;
+}
+.jiemo-futurejap-crumb {
+  padding: 1.2rem 15px 6rem;
+  line-height: 30px;
+}
+.jiemo-futurejap-crumb span {
+  color: #b8b8b8;
+  font-size: 1rem;
+}
+.jiemo-futurejap-crumb a {
+  color: #b8b8b8;
+}
+.jiemo-futurejap-crumb b {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.jiemo-futurejap-news .left .content {
+  background-color: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.content .header {
+  overflow: hidden;
+  border-bottom: 0.1rem solid #e6e6e6;
+  padding: 0 2rem 1rem 0;
+}
+.header h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 2rem;
+}
+.header em {
+  float: left;
+  font-size: 0.8rem;
+  line-height: 34px;
+}
+.header i {
+  float: left;
+  font-size: 0.8rem;
+  line-height: 34px;
+  margin-left: 2rem;
+}
+.header i img {
+  height: 0.8rem;
+  margin-right: 0.3rem;
+  position: relative;
+  top: -0.1rem;
+}
+.content .text {
+  line-height: 1.8rem;
+  padding: 1.5rem 0;
+}
+.jiemo-futurejap-news .left .content .footer {
+  border-top: 0.1rem solid #e6e6e6;
+  padding-top: 1.5rem;
+  font-size: 1rem;
+}
+.jiemo-futurejap-news .left .content .footer span {
+  display: block;
+  line-height: 1.5rem;
+}
+.jiemo-futurejap-news .left .content .footer em {
+  color: #999;
+}
+.footer b {
+  font-weight: normal;
+  color: #a51a29;
+}
+.alert{
+  text-align: center;
+}

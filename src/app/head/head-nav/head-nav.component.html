@@ -65,5 +65,5 @@
     <!--二级导航暂时删除-->
   </div>
 </div>
-<app-login *ngIf="isWillLogin" (closeStatus)="closeLogin($event)" (successLogin)="loginSuccess($event)"></app-login>
+<app-login *ngIf="isWillLogin" (closeStatus)="closeLogin($event)" (successLogin)="loginSuccess($event)" (toRegister)="gotoRegister()"></app-login>
 <app-register *ngIf="isWillRegister" (closeRegister)="closeRegister($event)" (toLogin)="gotoLogin()"></app-register>

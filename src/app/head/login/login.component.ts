@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
 
   @Output() closeStatus = new EventEmitter();
   @Output() successLogin = new EventEmitter();
+  @Output() toRegister = new EventEmitter();
 
   closed = false;
   fail = false;
@@ -41,6 +42,10 @@ export class LoginComponent implements OnInit {
         this.successLogin.emit(user);
       }
     });
+  }
+
+  gotoRegister() {
+    this.toRegister.emit(true);
   }
 
 }

@@ -18,4 +18,11 @@ export class ArticleService {
       return res as ResponseResult;
     }));
   }
+
+  getArticle(id: number): Observable<ResponseResult> {
+    const url = `http://localhost:8080/api/article/${id}`;
+    return this.http.get(url).pipe(map(res => {
+      return res as ResponseResult;
+    }));
+  }
 }

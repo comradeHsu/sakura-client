@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ArticleService} from '../service/article.service';
-import {Article} from '../model/article';
-import {Page} from '../model/page';
+import {ArticleService} from '../../service/article.service';
+import {Article} from '../../model/article';
+import {Page} from '../../model/page';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  selector: 'app-news-list',
+  templateUrl: './news-list.component.html',
+  styleUrls: ['./news-list.component.css']
 })
-export class NewsComponent implements OnInit {
+export class NewsListComponent implements OnInit {
 
   constructor(private service: ArticleService) { }
   articles: Article[];

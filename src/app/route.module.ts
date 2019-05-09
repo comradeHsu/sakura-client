@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {IndexComponent} from './index/index.component';
-import {NewsComponent} from './news/news.component';
+import {NewsListComponent} from './news/news-list/news-list.component';
 import {SchoolsComponent} from './schools/schools.component';
 /**
  * Created by xuhui on 2019/05/07.
@@ -18,8 +18,8 @@ const routes: Routes = [
     component: IndexComponent
   },
   {
-    path: 'news',
-    component: NewsComponent,
+    path: 'news-list',
+    component: NewsListComponent,
   },
   {
     path: 'schools',

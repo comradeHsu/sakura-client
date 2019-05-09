@@ -1,0 +1,44 @@
+<div class="container-fluid jiemo-futurejap-news">
+  <ngb-alert [dismissible]="false"  *ngIf="fail" class="alert">
+    <strong>{{ message }}</strong>
+  </ngb-alert>
+  <div class="row">
+    <!--面包屑 start-->
+    <div class="container jiemo-futurejap-crumb">
+      <div class="row">
+        <div class="col-md-12">
+          <span>您的位置：<a href="/">首页</a>/</span>
+          <span><a href="/news">新闻资讯</a>/</span>
+          <b style="color: #333">内容</b>
+        </div>
+      </div>
+    </div>
+    <!--面包屑 end-->
+    <!--内容 start-->
+    <div class="container">
+      <div class="row">
+        <!--左侧 start-->
+        <div class="col-md-9 left">
+          <div class="content">
+            <div class="header">
+              <h2>{{ article.title }}</h2>
+              <span>
+                <em>{{ article.createTime }}</em>
+                <i><img src="http://www.qianchengriben.com/Public/Home/images/icon-news-1.png" alt="">{{ article.readCount }}</i>
+              </span>
+            </div>
+            <div class="text" [innerHtml]="article.content">
+            </div>
+            <div class="footer">
+              <span>非特殊说明，本文版权原作者，转载请注明出处</span>
+              <em>本文地址：<b>http://www.yingzhiguo.com</b></em>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!--内容推荐 end-->
+    </div>
+  </div>
+</div>
+  <!--内容 end-->
+

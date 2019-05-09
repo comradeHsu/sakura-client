@@ -1,4 +1,3 @@
-<app-head-nav></app-head-nav>
 <div class="container jiemo-futurejap-crumb">
   <div class="row">
     <div class="col-md-12">
@@ -16,7 +15,7 @@
   <div class="row content">
     <!--循环 start，滚动到底部继续加载，每次加载12条-->
     <div class="col-md-3" *ngFor="let article of articles">
-      <a href="http://www.qianchengriben.com/news/detail/id/236">
+      <a routerLink="/news/detail/{{ article.id }}">
         <p style="height: 168.32px;"><img [src]="article.picture" alt="" style="width: 100%;"></p>
         <h3>{{ article.title }}</h3>
         <span>

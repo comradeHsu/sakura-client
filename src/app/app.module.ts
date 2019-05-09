@@ -8,16 +8,15 @@ import {HeadModule} from './head/head.module';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {FootComponent} from './head/foot/foot.component';
-import {NewsComponent} from './news/news.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SchoolsComponent} from './schools/schools.component';
+import {NewsModule} from './news/news.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     FootComponent,
-    NewsComponent,
     SchoolsComponent
   ],
   imports: [
@@ -26,7 +25,8 @@ import {SchoolsComponent} from './schools/schools.component';
     HeadModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NewsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
