@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SchoolService} from '../service/school.service';
 import {Region} from '../model/region';
+import {Request} from '../model/request';
+import {School} from '../model/school';
 
 @Component({
   selector: 'app-schools',
@@ -13,18 +15,20 @@ export class SchoolsComponent implements OnInit {
 
   parentRegions: Region[];
   subRegions: Region[];
-  parentId: any = '';
-  subId: any;
-  request: {
-    name: null,
-    parentId: null,
-    subId: null,
-    rankingTop: null,
-    rankingBottom: null
+  actives: any[] = ['active', '', '', ''];
+  request: Request = {
+    name: '',
+    parentId: '',
+    subId: '',
+    rankingTop: '',
+    rankingBottom: '',
+    page: 1
   };
-
+  schools: School[];
+  totalCount: number;
   ngOnInit() {
     this.getParentRegion();
+    this.search();
   }
 
   getParentRegion(): void {
@@ -34,13 +38,40 @@ export class SchoolsComponent implements OnInit {
   }
 
   getSubRegion(): void {
-    if (this.parentId === '') {
+    if (this.request.parentId === null) {
       this.subRegions = null;
       return;
     }
-    this.service.getSubRegion(this.parentId).subscribe(data => {
+    this.service.getSubRegion(this.request.parentId).subscribe(data => {
       this.subRegions = data.data;
     });
   }
 
+  activeStyle(index: number): void {
+    const styles = ['', '', '', ''];
+    styles[index] = 'active';
+    this.actives = styles;
+    switch (index) {
+      case 1:
+        this.request.rankingTop = 1;
+        this.request.rankingBottom = 10;
+        break;
+      case 2:
+        this.request.rankingTop = 11;
+        this.request.rankingBottom = 20;
+        break;
+      case 3:
+        this.request.rankingTop = 21;
+        this.request.rankingBottom = 50;
+        break;
+    }
+    this.search();
+  }
+
+  search(): void {
+    this.service.searchSchools(this.request).subscribe(data => {
+      this.schools = data.data;
+      this.totalCount = data.dataCount;
+    });
+  }
 }
