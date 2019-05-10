@@ -70,44 +70,6 @@
       </div>
     </form>
     <!--搜索条件 end-->
-    <!--结果列表 start-->
-
-    <style type="text/css">
-      .pager-container {
-        text-align: center;
-        padding: 40px 0 20px;
-      }
-
-      .pager li {
-        margin: 0 2px;
-      }
-
-      .pager li > a,
-      .pager li > span {
-        display: inline-block;
-        padding: 5px 14px;
-        border: 1px solid #ddd;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 0px;
-        color: #666666;
-      }
-
-      .pager li > a:hover, .pager li > a:focus {
-        border-color: #333;
-      }
-
-      .pager li > span {
-        color: #333;
-        border-color: #333;
-      }
-
-      .pager li > span.more {
-        background: transparent;
-        border: none;
-        color: #666666;
-      }
-    </style>
     <div class="container end-area">
       <div class="row">
         <div class="col-md-12 list-header">
@@ -118,7 +80,7 @@
             <div class="row">
               <div class="col-md-2 col-xs-5">
                 <div class="img-area">
-                  <a href="http://www.qianchengriben.com/school/detail/id/382"><img [src]="school.schoolIcon" alt="学校logo"></a>
+                  <a routerLink="/school/detail/{{ school.id }}"><img [src]="school.schoolIcon" alt="学校logo"></a>
                 </div>
               </div>
               <div class="col-md-10 col-xs-7">
@@ -126,7 +88,7 @@
                 <p>世界排名：<span>{{ school.worldRanking }}</span>
                   国内排名：<span>{{ school.nationalRanking }}</span>
                 </p>
-                <a href="">查看详情 ➜</a>
+                <a routerLink="/school/detail/{{ school.id }}">查看详情 ➜</a>
               </div>
             </div>
           </div>
@@ -137,20 +99,6 @@
     <div class="pagination">
       <ngb-pagination [collectionSize]="totalCount" [(page)]="request.page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="search()"></ngb-pagination>
     </div>
-
-
-    <script charset="utf-8" src="http://lxbjs.baidu.com/lxb.js?sid=6143283"></script><script charset="utf-8" src="http://ada.baidu.com/phone-tracker/insert_bdtj?sid=6143283"></script><script charset="utf-8" src="https://tag.baidu.com/vcard/v.js?siteid=6143283&amp;url=http%3A%2F%2Fwww.qianchengriben.com%2Fschool&amp;source=&amp;rnd=242930942&amp;hm=1"></script><script src="https://hm.baidu.com/hm.js?8c8311aaba0cf831a260dad4892ecae2"></script><script type="text/javascript">
-    function changePage(num){
-      $('#search_page').val(num);$('#submit_page').val(num);search();
-    }
-    // 百度统计
-    function baidu_count(opt, tag){
-      var cat = '院校库PC端';
-      opt += '（列表）';
-      tag = tag ? tag : '';
-      _hmt.push(['_trackEvent', cat, opt, tag] );
-    }
-  </script>
 
   </div>
 </div>

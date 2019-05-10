@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {SchoolService} from '../service/school.service';
-import {Region} from '../model/region';
-import {Request} from '../model/request';
-import {School} from '../model/school';
+import {SchoolService} from '../../service/school.service';
+import {Region} from '../../model/region';
+import {Request} from '../../model/request';
+import {School} from '../../model/school';
 
 @Component({
   selector: 'app-schools',
@@ -22,7 +22,8 @@ export class SchoolsComponent implements OnInit {
     subId: '',
     rankingTop: '',
     rankingBottom: '',
-    page: 1
+    page: 1,
+    pageCount: 10
   };
   schools: School[];
   totalCount: number;
@@ -52,6 +53,10 @@ export class SchoolsComponent implements OnInit {
     styles[index] = 'active';
     this.actives = styles;
     switch (index) {
+      case 0:
+        this.request.rankingTop = '';
+        this.request.rankingBottom = '';
+        break;
       case 1:
         this.request.rankingTop = 1;
         this.request.rankingBottom = 10;

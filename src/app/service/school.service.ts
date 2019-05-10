@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ResponseResult} from '../model/response';
 import {map} from 'rxjs/operators';
-import {Request} from '../model/request';
+import {MajorRequest, Request} from '../model/request';
 
 @Injectable({
   providedIn: 'root'
@@ -24,14 +24,23 @@ export class SchoolService {
   }
 
   searchSchools(request: Request): Observable<ResponseResult> {
-    const options = { params: new HttpParams().set('name', request.name).set('parentId', request.parentId)
-      .set('subId', request.subId).set('rankingTop', request.rankingTop).set('rankingBottom', request.rankingBottom)
-      .set('page', request.page).set('pageCount', request.pageCount)};
-    console.log(options)
-    const query = `name=${request.name}&parentId=${request.parentId}'&subId=${request.subId}
-    &rankingTop=${request.rankingTop}&rankingBottom=${request.rankingBottom}&page=${request.page}
-    &pageCount=${request.pageCount}`;
-    const url = `http://localhost:8080/api/university/search?${query}`;
+    const options = { params: new HttpParams().set('name', request.name).set('parentId', request.parentId as string)
+        .set('subId', request.subId as string).set('rankingTop', request.rankingTop as string)
+        .set('rankingBottom', request.rankingBottom as string).set('page', request.page as string)
+        .set('pageCount', request.pageCount as string)};
+    const url = `http://localhost:8080/api/university/search`;
+    return this.http.get(url, options).pipe(map(res => res as ResponseResult));
+  }
+
+  getSchool(id: number): Observable<ResponseResult> {
+    const url = `http://localhost:8080/api/university/${id}`;
+    return this.http.get(url).pipe(map(res => res as ResponseResult));
+  }
+
+  getPageMajors(request: MajorRequest, id: number): Observable<ResponseResult> {
+    const options = { params: new HttpParams().set('majorName', request.majorName).set('degreeType', request.degreeType)
+    .set('page', request.page as string).set('pageCount', request.pageCount as string)};
+    const url = `http://localhost:8080/api/university/${id}/majors`;
     return this.http.get(url, options).pipe(map(res => res as ResponseResult));
   }
 }
