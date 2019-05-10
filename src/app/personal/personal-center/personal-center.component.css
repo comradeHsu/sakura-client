@@ -1,0 +1,65 @@
+.uPanel {
+  padding: 30px;
+  background-color: #fff;
+}
+.uPanelHead {
+  font-size: 16px;
+}
+.uPanelBody {
+  margin-top: 10px;
+}
+.uMedia {
+  position: relative;
+  margin-top: 20px;
+  padding: 40px 200px 40px 136px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(221, 220, 223, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(221, 220, 223, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(221, 220, 223, 0.5);
+}
+.uMedia i.ibg-consult {
+  background-image: url(../../../assets/images/icon-user-consult.png);
+}
+.mainBody a:link, .mainBody a:visited, .mainBody a:hover, .mainBody a:active {
+  text-decoration: none;
+}
+.uMedia i.ibg-evaluate {
+  background-image: url(../../../assets/images/icon-user-evaluate.png);
+}
+body, button, dd, div, dl, dt, input, li, ol, p, ul {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+dd {
+  display: block;
+  margin-inline-start: 40px;
+  margin-left: 0rem;
+}
+.uMedia .uMediaLink {
+  display: block;
+  padding: 12px 58px 12px 26px;
+  font-size: 16px;
+  background: url(../../../assets/images/icon-user-arrow.png) no-repeat 80% 16px;
+  border: 1px solid #363636;
+  color: #333;
+}
+.uMedia > a {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  margin-top: -21px;
+}
+.uMedia i {
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  margin-top: -40px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: no-repeat 50% 50%;
+}

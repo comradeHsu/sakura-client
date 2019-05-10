@@ -1,0 +1,75 @@
+.jiemo-futurejap-crumb {
+  padding-bottom: 5rem;
+}
+.jiemo-futurejap-crumb {
+  padding: 1.2rem 15px 6rem;
+  line-height: 30px;
+}
+.jiemo-futurejap-crumb.crumbsmall {
+  padding: 1.2rem 15px 2rem;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.jiemo-futurejap-crumb span {
+  color: #b8b8b8;
+  font-size: 1rem;
+}
+.jiemo-futurejap-crumb a {
+  color: #b8b8b8;
+}
+.jiemo-futurejap-crumb b {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.mainBody {
+  padding-bottom: 160px;
+  background: #f7f6fb url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDYAAACZCAMAAADjCEpWAAAAS1BMV…kid7zNZfVnQiqU7I6MjHxGebLLR1HUKf9rRChdkJGRzyn/AqJ1kIXIa534AAAAAElFTkSuQmCC) no-repeat 100% 100%;
+}
+.subContent {
+  background: #fff;
+  padding: 25px 0;
+}
+.subContent dl {
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+.subContent dl dt {
+  width: 68px;
+  height: 68px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.subContent dl dt img {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.subContent dl dd {
+  padding: 12px 8px 0;
+  word-wrap: break-word;
+}
+.subContent li {
+  padding: 6px 15px;
+  font-size: 16px;
+  margin-left: -2rem;
+}
+.subContent a.active {
+  background-color: #a51a30;
+  color: #fff;
+}
+.subContent a {
+  display: block;
+  padding: 12px 0;
+  color: #444;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.mainBody a:link, .mainBody a:visited, .mainBody a:hover, .mainBody a:active {
+  text-decoration: none;
+}

@@ -63,10 +63,10 @@ export class SchoolDetailComponent implements OnInit {
         this.request.degreeType = '';
         break;
       case 1:
-        this.request.degreeType = '博士';
+        this.request.degreeType = '硕士';
         break;
       case 2:
-        this.request.degreeType = '硕士';
+        this.request.degreeType = '博士';
         break;
       case 3:
         this.request.degreeType = '研究生';

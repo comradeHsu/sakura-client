@@ -1,0 +1,65 @@
+.uPanel {
+  padding: 30px;
+  background-color: #fff;
+}
+.uPanel .uPanelHead {
+  font-size: 16px;
+}
+.uPanel .uPanelBody {
+  margin-top: 10px;
+}
+.mainBody a:link, .mainBody a:visited, .mainBody a:hover, .mainBody a:active {
+  text-decoration: none;
+}
+.mainBody a {
+  text-decoration: none;
+  outline: none;
+}
+.uPanel .apply.status0 .uMedia {
+  padding: 25px 15px 35px;
+}
+.uMedia {
+  position: relative;
+  margin-top: 20px;
+  padding: 40px 200px 40px 136px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(221, 220, 223, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(221, 220, 223, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(221, 220, 223, 0.5);
+}
+.uPanel .apply.status0 .uMedia i {
+  position: static;
+  margin: 0 auto;
+}
+.uMedia i.ibg-consult {
+  background-image: url(../../../assets/images/icon-user-consult.png);
+}
+.uMedia i {
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  margin-top: -40px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: no-repeat 50% 50%;
+}
+.uPanel .apply.status0 .uMedia dl {
+  padding: 23px 0 0;
+  text-align: center;
+}
+.uMedia .uMediaBody {
+  color: #444;
+}
+.uMedia .uMediaBody dt {
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+body, button, dd, div, dl, dt, input, li, ol, p, ul {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+.uMedia i.ibg-evaluate {
+  background-image: url(../../../assets/images/icon-user-evaluate.png);
+}

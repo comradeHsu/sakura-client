@@ -1,0 +1,188 @@
+.uAccount {
+  padding: 0 30px 30px;
+  background-color: #fff;
+}
+.uAccount .uCellHead {
+  padding-top: 24px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+}
+.uAccount .uCellBody {
+  padding: 25px 0 20px;
+  border-bottom: 2px dotted #f7f6fb;
+}
+.uAccount .uCellBody .uAvatar {
+  float: left;
+}
+.uAccount .uCellBody .uAvatar img {
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+img {
+  outline: 0;
+  border: none;
+}
+.uAccount .uCellBody .uAvatarUpload {
+  position: relative;
+  float: left;
+  padding: 40px 30px;
+  overflow: hidden;
+}
+.mainBody .btn-red-darken {
+  display: inline-block;
+  padding: .5em 1.5em;
+  background-color: #a51a30;
+  border: none;
+  color: #fff;
+}
+.uAccount .uCellBody .uAvatarUpload input {
+  position: absolute;
+  top: -9999em;
+}
+.mainBody input {
+  padding: .325em;
+  border: 1px solid #dbdbdb;
+  font-size: 16px;
+}
+.uAccount .uCellHead {
+  padding-top: 24px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+}
+.uAccount .uCellBody .uNicName dt, .uAccount .uCellBody .uNicName dd {
+  float: left;
+  padding-right: 10px;
+}
+body, button, dd, div, dl, dt, input, li, ol, p, ul {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+.uAccount .uCellBody .uNicName dt input {
+  width: 300px;
+}
+.uCellBody input {
+  padding: 0.325em;
+  border: 1px solid #dbdbdb;
+  font-size: 16px;
+}
+.uAccount .uCellBody .uNicName dt, .uAccount .uCellBody .uNicName dd {
+  float: left;
+  padding-right: 10px;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+button {
+  border-radius: 0;
+}
+a, button, input, textarea {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+.uAccount .uCellBody .uNicName dt, .uAccount .uCellBody .uNicName dd {
+  float: left;
+  padding-right: 10px;
+}
+.uAccount .uCellBody .uUpdatePassword li {
+  padding: 10px 0;
+}
+li, ol, ul {
+  list-style: none outside none;
+}
+.uAccount .uCellBody .uUpdatePassword li span {
+  display: inline-block;
+  padding-right: 20px;
+}
+.uAccount .uCellBody .uUpdatePassword li input {
+  width: 240px;
+}
+.uAccount .uCellBody .uUpdatePassword li button {
+  margin-left: 10px;
+}
+.mainBody .btn-red-darken {
+  display: inline-block;
+  padding: .5em 1.5em;
+  background-color: #a51a30;
+  border: none;
+  color: #fff;
+}
+.uAccount .uCellBody .uUpdatePassword li button {
+  margin-left: 10px;
+}
+a, button, input, textarea {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+body, button, input, keygen, legend, select, textarea {
+  line-height: auto;
+  font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Arial,Roboto,Droid Sans,Droid Sans Fallback,Heiti SC,Hiragino Sans GB,Simsun,sans-self;
+}
+body, button, dd, div, dl, dt, input, li, ol, p, ul {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+.mainBody .btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+button, input, textarea {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+body, button, input, keygen, legend, select, textarea {
+  line-height: auto;
+  font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Arial,Roboto,Droid Sans,Droid Sans Fallback,Heiti SC,Hiragino Sans GB,Simsun,sans-self;
+}
+body, button, dd, div, dl, dt, input, li, ol, p, ul {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+.btn-red-darken {
+  display: inline-block;
+  padding: .5em 1.5em;
+  background-color: #a51a30;
+  border: none;
+  color: #fff;
+}
