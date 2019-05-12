@@ -1,0 +1,25 @@
+.common-right-aside {
+  position: fixed;
+  right: 50px;
+  bottom: 12%;
+  width: 60px;
+  z-index: 8;
+}
+.common-right-aside a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #8d1829;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.common-right-aside a span {
+  display: inline-block;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 24px;
+  margin-top: 5px;
+}

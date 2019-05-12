@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PersonalService} from '../../service/personal.service';
 import {File} from '../../model/file';
-import {map} from 'rxjs/internal/operators';
+import {Common} from '../../model/common';
 
 @Component({
   selector: 'app-account',
@@ -37,9 +37,9 @@ export class AccountComponent implements OnInit {
     formData.append('token', this.token);
     this.http.post('http://upload-z0.qiniu.com', formData, this.httpOptions)
       .subscribe(data => {
-          // data = data as any;
-          // this.file.value = `${data.key}`;
-        console.log(data);
+          data = data as {key: string};
+          this.file.value = `${Common.QINIU_DOMAIN}/${data.key}`;
+          console.log(this.file.value);
         }
       );
   }

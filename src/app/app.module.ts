@@ -12,12 +12,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NewsModule} from './news/news.module';
 import {SchoolModule} from './school/school.module';
 import {PersonalModule} from "./personal/personal.module";
+import {FloatNavComponent} from "./float-nav/float-nav.component";
+import {TalkComponent} from "./talk/talk.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    FootComponent
+    FootComponent,
+    FloatNavComponent,
+    TalkComponent
   ],
   imports: [
     BrowserModule,

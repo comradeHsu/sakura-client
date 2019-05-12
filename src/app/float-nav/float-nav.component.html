@@ -1,0 +1,8 @@
+<div class="common-right-aside">
+  <a href="http://www.qianchengriben.com/free/sem"><span>评估<br>定位</span></a>
+  <a (click)="openTalk()" target="_blank">
+    <!--<img src="/Public/Home/images/icon-ewmsq.png" alt="">--><span>咨询<br>客服</span>
+  </a>
+  <a class="jiemo-futurejap-defaultbt" href="#"><i class="glyphicon glyphicon-menu-up"></i></a>
+</div>
+<app-talk *ngIf="isTalk" (closeTalk)="closeTalk($event)"></app-talk>

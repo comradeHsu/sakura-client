@@ -6,13 +6,15 @@ import {PersonalCenterComponent} from './personal-center/personal-center.compone
 import {ApplyComponent} from './apply/apply.component';
 import {AccountComponent} from './account/account.component';
 import {HeadModule} from '../head/head.module';
+import {AssessmentComponent} from './assessment/assessment.component';
 
 @NgModule({
   declarations: [
     PersonalComponent,
     PersonalCenterComponent,
     ApplyComponent,
-    AccountComponent
+    AccountComponent,
+    AssessmentComponent
   ],
   imports: [
     CommonModule,

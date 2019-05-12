@@ -1,0 +1,119 @@
+.jiemo-futurejap-planheader {
+  background: url(../../../assets/images/bg-sectop-2.jpg) no-repeat center top;
+}
+.jiemo-futurejap-crumb {
+  padding: 1.2rem 15px 6rem;
+  line-height: 30px;
+}
+.jiemo-futurejap-crumb span {
+  color: #b8b8b8;
+  font-size: 1rem;
+}
+.jiemo-futurejap-crumb a {
+   color: #b8b8b8;
+}
+.jiemo-futurejap-crumb b {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.jiemo-futurejap-planheader h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+.jiemo-futurejap-planheader p {
+  width: 60%;
+  line-height: 2.2rem;
+  color: #fff;
+  font-size: 1rem;
+  padding-bottom: 5.4rem;
+}
+.jiemo-futurejap-aeposition {
+  background-color: #f7f7fa;
+  padding-bottom: 5rem;
+}
+.jiemo-futurejap-aeposition .jiemo-futurejap-assessform {
+  background: none;
+}
+.jiemo-futurejap-aeposition .jiemo-futurejap-assessform .content {
+  background: #fff;
+  border: none;
+}
+.jiemo-futurejap-assessform .content {
+  /*background: #fff url(../images/img-assess-2.png) no-repeat bottom left;*/
+  padding-bottom: 5rem;
+  border: 0.1rem solid #ddd;
+}
+.jiemo-futurejap-aeposition .aeposition-title {
+  font-size: 1.5rem;
+  width: 50%;
+  margin: auto;
+  padding: 2rem 0 0.8rem;
+}
+.jiemo-futurejap-aeposition .jiemo-futurejap-assessform .content ul {
+  padding: 1rem 0;
+}
+.jiemo-futurejap-assessform .content ul li {
+  margin-bottom: 2rem;
+}
+.jiemo-futurejap-assessform .content ul li h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.4rem;
+  position: relative;
+}
+.jiemo-futurejap-assessform .content ul li h4 em span {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  background-color: #f9cf01;
+  color: #333;
+  white-space: nowrap;
+}
+.btn-assess-submit {
+  border: none;
+  background: none;
+  display: block;
+  width: 15rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  margin: auto;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #a51a29;
+  text-align: center;
+}
+.content strong{
+  float: left;
+  width: 7rem;
+}
+.info{
+  float: left;
+}
+.ctrl-select-area select{
+  width: 18%;
+  height: 34px;
+  margin-left: 2rem;
+  -webkit-appearance: none;
+  padding: 0 0.6rem;
+  margin-right: -1.5rem;
+}
+.all{
+  width: 18%;
+}
+.all select{
+  width: 100%;
+  margin-left: 0rem;
+  padding-left: 2rem;
+}
+.nofirst {
+  margin-left: 2rem;
+}
+.ctrl-select-area i {
+  color: #999;
+  font-size: 0.8rem;
+  pointer-events: none;
+}

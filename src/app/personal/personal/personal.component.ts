@@ -11,5 +11,11 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit() {
   }
+  actives: string[] = ['active', '', ''];
 
+  togger(index: number): void {
+    const styles = ['', '', ''];
+    styles[index] = 'active';
+    this.actives = styles;
+  }
 }

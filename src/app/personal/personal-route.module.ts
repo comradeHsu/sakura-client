@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {PersonalCenterComponent} from './personal-center/personal-center.component';
 import {ApplyComponent} from './apply/apply.component';
 import {AccountComponent} from './account/account.component';
+import {AssessmentComponent} from "./assessment/assessment.component";
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
         component: AccountComponent
       }
     ]
+  },
+  {
+    path: 'assessment',
+    component: AssessmentComponent
   }
 ];
 

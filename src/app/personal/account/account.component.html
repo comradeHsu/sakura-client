@@ -3,7 +3,10 @@
     <div class="uAccount">
       <div class="uCellHead">修改头像</div>
       <div class="uCellBody clearfix">
-        <div class="uAvatar"><img src="http://www.qianchengriben.com/Public/Home/images/hed-default.png" alt=""></div>
+        <div class="uAvatar">
+          <img *ngIf="!file.status" src="http://www.qianchengriben.com/Public/Home/images/hed-default.png" alt="">
+          <img *ngIf="file.status" [src]="file.value" alt="">
+        </div>
         <div class="uAvatarUpload">
           <label for="uAvatar" class="btn btn-red-darken">点击上传</label>
           <input type="file" id="uAvatar" name="uAvatar" accept=".gif,.jpg,.png,.jpeg" (change)="upload($event.target.files)">
