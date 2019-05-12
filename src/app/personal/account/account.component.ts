@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PersonalService} from '../../service/personal.service';
-import {File} from '../../model/file';
+import {File, Qiniu} from '../../model/file';
 import {Common} from '../../model/common';
 
 @Component({
@@ -37,8 +37,8 @@ export class AccountComponent implements OnInit {
     formData.append('token', this.token);
     this.http.post('http://upload-z0.qiniu.com', formData, this.httpOptions)
       .subscribe(data => {
-          data = data as {key: string};
-          this.file.value = `${Common.QINIU_DOMAIN}/${data.key}`;
+          const dat = data as Qiniu;
+          this.file.value = `${Common.QINIU_DOMAIN}/${dat.key}`;
           console.log(this.file.value);
         }
       );

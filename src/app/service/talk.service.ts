@@ -49,7 +49,7 @@ export class TalkService {
   //   return Subject.create(observer, observable);
   // }
   connectWs(userId: number): Observable<MessageEvent> {
-    const chatUrl = `ws://localhost:8080/conversation/${userId}`;
+    const chatUrl = `ws://134.175.137.51:8080/conversation/${userId}`;
     this.ws = new WebSocket(chatUrl);
     return new Observable(
       observer => {

@@ -34,9 +34,11 @@
                       <input type="text" class="form-control"  name="name"  placeholder="请输入毕业院校" id="search_sh_name" value="">
                     </div>
                     <div class="ctrl-select-area">
-                      <select data-province="高校类型" name="parentId" id="" >
-                        <option value=""> 全部地区</option>
-                        <option  value=""> </option>
+                      <select data-province="高校类型" name="parentId" >
+                        <option value="">高校类型</option>
+                        <option  value="0">985院校</option>
+                        <option  value="1">211院校</option>
+                        <option  value="2">一般院校</option>
                       </select>
                       <i class="glyphicon glyphicon-triangle-bottom"></i>
                     </div>
@@ -54,9 +56,10 @@
                         <input type="text" class="form-control"  name="name"  placeholder="托福分数" value="">
                       </div>
                       <div class="ctrl-select-area">
-                        <select data-city="全部城市" id="theCity" name="subId" >
-                          <option value=""> 日语等级</option>
-                          <option value="">  </option>
+                        <select id="theCity" name="subId" >
+                          <option value="">日语等级</option>
+                          <option value="1">N1</option>
+                          <option value="2">N2</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
@@ -67,23 +70,30 @@
                     <strong>申请优劣势：</strong>
                     <div class="ctrl-select" data-toggle="distpicker">
                       <div class="ctrl-select-area info all">
-                        <select data-city="全部城市" id="" name="subId" >
-                          <option value=""> GPA满分</option>
-                          <option value="">  </option>
+                        <select data-city="全部城市"  name="subId" >
+                          <option value="">GPA满分</option>
+                          <option value="5">5分</option>
+                          <option value="4">4分</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
                       <div class="ctrl-select-area info all nofirst">
-                        <select data-city="全部城市" id="" name="subId" >
-                          <option value=""> GPA分数</option>
-                          <option value="">  </option>
+                        <select name="subId" >
+                          <option value="">GPA分数</option>
+                          <option value="5">5分</option>
+                          <option value="4">4分</option>
+                          <option value="3">3分</option>
+                          <option value="2">2分</option>
+                          <option value="1">1分</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
                       <div class="ctrl-select-area all info nofirst">
                         <select data-city="全部城市" id="" name="subId" >
-                          <option value=""> 评分信息</option>
-                          <option value="">  </option>
+                          <option value="">评分信息</option>
+                          <option value="1">985/211院校，语言成绩好，日语流畅</option>
+                          <option value="2">211院校，语言成绩一般，日语了解</option>
+                          <option value="3">一般院校，语言成绩一般，不懂日语</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
