@@ -23,6 +23,11 @@ export class HeadNavComponent implements OnInit {
       this.isLogin = true;
       this.realName = user.realName;
     }
+    const expired = sessionStorage.getItem('expired');
+    console.log(expired);
+    if (expired != null) {
+      this.isWillLogin = true;
+    }
   }
 
   willLogin() {

@@ -5,11 +5,13 @@ import {PersonalCenterComponent} from './personal-center/personal-center.compone
 import {ApplyComponent} from './apply/apply.component';
 import {AccountComponent} from './account/account.component';
 import {AssessmentComponent} from "./assessment/assessment.component";
+import {LoginGuard} from "../guard/login.guard";
 
 const routes: Routes = [
   {
     path: 'personal',
     component: PersonalComponent,
+    canActivate: [LoginGuard],
     children: [
       {
         path: '',

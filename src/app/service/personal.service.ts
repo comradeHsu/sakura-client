@@ -4,7 +4,7 @@ import {map} from 'rxjs/internal/operators';
 import {ResponseResult} from '../model/response';
 import {Observable} from 'rxjs/index';
 import {environment} from '../../environments/environment';
-import {User} from '../model/user';
+import {Assessment, User} from '../model/user';
 
 
 @Injectable({
@@ -28,5 +28,12 @@ export class PersonalService {
     const token = sessionStorage.getItem('token');
     this.httpOptions.headers = this.httpOptions.headers.append('Token', token);
     return this.http.patch(url, user, this.httpOptions).pipe(map(res => res as ResponseResult));
+  }
+
+  assessment(data: Assessment): Observable<ResponseResult> {
+    const url = `http://${environment.domain}/api/user/assessment`;
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    return this.http.post(url, data, {headers}).pipe(map(res => res as ResponseResult));
   }
 }

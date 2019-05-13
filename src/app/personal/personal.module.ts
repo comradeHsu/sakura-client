@@ -9,6 +9,7 @@ import {HeadModule} from '../head/head.module';
 import {AssessmentComponent} from './assessment/assessment.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
+import {LoginGuard} from '../guard/login.guard';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,9 @@ import {FormsModule} from '@angular/forms';
     HeadModule,
     NgbModule,
     FormsModule
-  ]
+  ],
+  providers: [
+    LoginGuard
+  ],
 })
 export class PersonalModule { }

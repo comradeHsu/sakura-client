@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Assessment} from '../../model/user';
+import {PersonalService} from '../../service/personal.service';
 
 @Component({
   selector: 'app-assessment',
@@ -8,9 +9,13 @@ import {Assessment} from '../../model/user';
 })
 export class AssessmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PersonalService) { }
   assessment: Assessment = new Assessment();
   ngOnInit() {
   }
 
+  userAssess(): void {
+    console.log(this.assessment);
+    this.service.assessment(this.assessment).subscribe(data => console.log(data));
+  }
 }

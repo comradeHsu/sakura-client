@@ -36,9 +36,9 @@
                     <div class="ctrl-select-area">
                       <select data-province="高校类型" name="schoolType" [(ngModel)]="assessment.schoolType">
                         <option value="">高校类型</option>
-                        <option  value="0">985院校</option>
-                        <option  value="1">211院校</option>
-                        <option  value="2">一般院校</option>
+                        <option  [ngValue]="0">985院校</option>
+                        <option  [ngValue]="1">211院校</option>
+                        <option  [ngValue]="2">一般院校</option>
                       </select>
                       <i class="glyphicon glyphicon-triangle-bottom"></i>
                     </div>
@@ -56,10 +56,10 @@
                         <input type="number" class="form-control"  name="name" [(ngModel)]="assessment.toefl" placeholder="托福分数" value="">
                       </div>
                       <div class="ctrl-select-area">
-                        <select id="theCity" name="subId" [(ngModel)]="assessment.japeneseLevel">
-                          <option value="">日语等级</option>
-                          <option value="1">N1</option>
-                          <option value="2">N2</option>
+                        <select id="theCity" name="subId" [(ngModel)]="assessment.japaneseLevel">
+                          <option  value="">日语等级</option>
+                          <option [ngValue]="1">N1</option>
+                          <option [ngValue]="2">N2</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
@@ -70,30 +70,30 @@
                     <strong>申请优劣势：</strong>
                     <div class="ctrl-select" data-toggle="distpicker">
                       <div class="ctrl-select-area info all">
-                        <select data-city="全部城市"  name="schoolGPA" [(ngModel)]="assessment.schoolGPA">
+                        <select data-city="全部城市"  name="schoolGPA" [(ngModel)]="assessment.schoolGpa">
                           <option value="">GPA满分</option>
-                          <option value="5">5分</option>
-                          <option value="4">4分</option>
+                          <option [ngValue]="5">5分</option>
+                          <option [ngValue]="4">4分</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
                       <div class="ctrl-select-area info all nofirst">
-                        <select name="GPA" [(ngModel)]="assessment.GPA">
+                        <select name="GPA" [(ngModel)]="assessment.gpa">
                           <option value="">GPA分数</option>
-                          <option value="5">5分</option>
-                          <option value="4">4分</option>
-                          <option value="3">3分</option>
-                          <option value="2">2分</option>
-                          <option value="1">1分</option>
+                          <option [ngValue]="5">5分</option>
+                          <option [ngValue]="4">4分</option>
+                          <option [ngValue]="3">3分</option>
+                          <option [ngValue]="2">2分</option>
+                          <option [ngValue]="1">1分</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
                       <div class="ctrl-select-area all info nofirst">
                         <select data-city="全部城市" id="" name="score" [(ngModel)]="assessment.score">
                           <option value="">评分信息</option>
-                          <option value="1">985/211院校，语言成绩好，日语流畅</option>
-                          <option value="2">211院校，语言成绩一般，日语了解</option>
-                          <option value="3">一般院校，语言成绩一般，不懂日语</option>
+                          <option [ngValue]="1">985/211院校，语言成绩好，日语流畅</option>
+                          <option [ngValue]="2">211院校，语言成绩一般，日语了解</option>
+                          <option [ngValue]="3">一般院校，语言成绩一般，不懂日语</option>
                         </select>
                         <i class="glyphicon glyphicon-triangle-bottom"></i>
                       </div>
@@ -102,7 +102,7 @@
                   </li>
                 </ul>
               </div>
-              <input class="btn-assess-submit" type="button" value="提交信息">
+              <input class="btn-assess-submit" type="button" value="提交信息" (click)="userAssess()">
             </div>
           </form>
 

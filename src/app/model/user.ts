@@ -15,8 +15,8 @@ export class Assessment {
   schoolType: number;
   major: string;
   toefl: number;
-  japeneseLevel: number;
-  schoolGPA: number;
-  GPA: number;
+  japaneseLevel: number;
+  schoolGpa: number;
+  gpa: number;
   score: number;
 }
