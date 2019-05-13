@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Assessment} from '../../model/user';
 
 @Component({
   selector: 'app-assessment',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AssessmentComponent implements OnInit {
 
   constructor() { }
-
+  assessment: Assessment = new Assessment();
   ngOnInit() {
   }
 

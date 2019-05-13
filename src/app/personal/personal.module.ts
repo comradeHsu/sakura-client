@@ -7,6 +7,8 @@ import {ApplyComponent} from './apply/apply.component';
 import {AccountComponent} from './account/account.component';
 import {HeadModule} from '../head/head.module';
 import {AssessmentComponent} from './assessment/assessment.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AssessmentComponent} from './assessment/assessment.component';
   imports: [
     CommonModule,
     PersonalRouteModule,
-    HeadModule
+    HeadModule,
+    NgbModule,
+    FormsModule
   ]
 })
 export class PersonalModule { }

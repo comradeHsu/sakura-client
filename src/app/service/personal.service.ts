@@ -6,6 +6,7 @@ import {Observable} from 'rxjs/index';
 import {environment} from '../../environments/environment';
 import {User} from '../model/user';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,11 +19,11 @@ export class PersonalService {
   constructor(private http: HttpClient) { }
 
   getToken(): Observable<ResponseResult> {
-    const url = 'http://localhost:8080/qiniu/token';
+    const url = `http://${environment.domain}/qiniu/token`;
     return this.http.get(url).pipe(map(res => res as ResponseResult));
   }
 
-  editUserIcon(user: User): Observable<ResponseResult> {
+  editUser(user: User): Observable<ResponseResult> {
     const url = `http://${environment.domain}/api/user`;
     const token = sessionStorage.getItem('token');
     this.httpOptions.headers = this.httpOptions.headers.append('Token', token);

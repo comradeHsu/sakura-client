@@ -1,3 +1,6 @@
+<ngb-alert [dismissible]="false"  *ngIf="fail" class="alert">
+  <strong>{{ message }}</strong>
+</ngb-alert>
 <div class="col-md-10">
   <div class="mainContent">
     <div class="uAccount">
@@ -13,12 +16,12 @@
         </div>
         <div class="uAvatarTip"></div>
       </div>
-      <div class="uCellHead">昵称修改</div>
+      <div class="uCellHead">真实姓名</div>
       <div class="uCellBody clearfix">
         <dl class="uNicName">
-          <dt><input type="text" placeholder="" id="nickname" name="nickname"></dt>
+          <dt><input type="text" placeholder="" id="nickname" name="nickname" [(ngModel)]="realName"></dt>
           <dd>
-            <button type="button" class="btn btn-red-darken" id="nicknameBtn">提交</button>
+            <button type="button" class="btn btn-red-darken" id="nicknameBtn" (click)="editName()">提交</button>
           </dd>
           <dd class="uAvatarTip_nickname" style="color: #a51a30;margin-left: 5px;"></dd>
         </dl>
@@ -27,9 +30,9 @@
       <div class="uCellHead">密码修改</div>
       <div class="uCellBody clearfix">
         <ul class="uUpdatePassword">
-          <li><span>旧密码</span><input type="password" id="oldPwd"></li>
-          <li><span>新密码</span><input type="password" id="newPwd">
-            <button type="button" class="btn btn-red-darken" id="passwordBtn">提交</button>
+          <li><span>旧密码</span><input type="password" id="oldPwd" name="oldPwd" [(ngModel)]="passwordData.oldPassword" /></li>
+          <li><span>新密码</span><input type="password" id="newPwd" name="newPwd" [(ngModel)]="passwordData.newPassword" />
+            <button type="button" class="btn btn-red-darken" id="passwordBtn" (click)="editPassword()">提交</button>
             <span class="uAvatarTip_pwd" style="color: #a51a30;margin-left: 5px;"></span></li>
 
         </ul>

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import {ResponseResult} from '../model/response';
 import {User} from '../model/user';
 import {Common} from "../model/common";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   userLogin(username: string, password: string): Observable<ResponseResult> {
-    const url = `${Common.API_PROD_DOMAIN}/api/user/session`;
+    const url = `http://${environment.domain}/api/user/session`;
     return this.http.post(url, {username, password}, this.httpOptions)
       .pipe(map(res => {
         return res as ResponseResult;
       }));
   }
   loginOut(): Observable<ResponseResult> {
-    const url = `${Common.API_PROD_DOMAIN}/api/user/session`;
+    const url = `http://${environment.domain}/api/user/session`;
     const token = sessionStorage.getItem('token');
     this.httpOptions.headers = this.httpOptions.headers.append('Token', token);
     return this.http.delete(url, this.httpOptions)
@@ -33,9 +34,23 @@ export class UserService {
   }
 
   register(user: User): Observable<ResponseResult> {
-    const url = `${Common.API_PROD_DOMAIN}/api/user`;
+    const url = `http://${environment.domain}/api/user`;
     return this.http.post(url, user).pipe(map(res => {
       return res as ResponseResult;
     }));
+  }
+
+  getUserInfo(): Observable<ResponseResult> {
+    const url = `http://${environment.domain}/api/user/info`;
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
+  editPassword(data: {newPassword: string, oldPassword: string}): Observable<ResponseResult> {
+    const url = `http://${environment.domain}/api/user/password`;
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    return this.http.put(url, data, {headers}).pipe(map(res => res as ResponseResult));
   }
 }
