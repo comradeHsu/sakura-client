@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PersonalService} from '../../service/personal.service';
 import {File, Qiniu} from '../../model/file';
 import {Common} from '../../model/common';
+import {flatMap, map} from 'rxjs/operators';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-account',
@@ -35,12 +37,20 @@ export class AccountComponent implements OnInit {
     const formData: FormData = new FormData();
     formData.append('file', thisFile, thisFile.name);
     formData.append('token', this.token);
+    // this.http.post('http://upload-z0.qiniu.com', formData, this.httpOptions)
+    //   .subscribe(data => {
+    //       const dat = data as Qiniu;
+    //       this.file.value = `${Common.QINIU_DOMAIN}/${dat.key}`;
+    //       console.log(this.file.value);
+    //     }
+    //   );
     this.http.post('http://upload-z0.qiniu.com', formData, this.httpOptions)
-      .subscribe(data => {
-          const dat = data as Qiniu;
-          this.file.value = `${Common.QINIU_DOMAIN}/${dat.key}`;
-          console.log(this.file.value);
-        }
-      );
+      .pipe(flatMap(data => {
+        const dat = data as Qiniu;
+        this.file.value = `${Common.QINIU_DOMAIN}/${dat.key}`;
+        const user: User = new User();
+        user.icon = this.file.value;
+        return this.service.editUserIcon(user);
+      })).subscribe(data => console.log(data.message));
   }
 }
