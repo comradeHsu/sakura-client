@@ -69,3 +69,7 @@ body, button, dd, div, dl, dt, input, li, ol, p, ul {
 .uMedia i.ibg-file {
   background-image: url(../../../assets/images/file.png);
 }
+.btn-group{
+  padding-left: 11rem;
+  padding-top: 4rem;
+}

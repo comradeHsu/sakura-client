@@ -10,6 +10,13 @@ export class User {
   assessed: boolean;
 }
 
+export class Agreement {
+  userId: number;
+  apply: string;
+  train: string;
+  visa: string;
+}
+
 export class Assessment {
   userId: number;
   school: string;
