@@ -23,10 +23,10 @@
       </div>
       <div class="split"></div>
       <div class="input-area">
-        <textarea class="input-area" [(ngModel)]="message"></textarea>
+        <textarea class="input-area" [(ngModel)]="message" (keyup.enter)="send()"></textarea>
         <!--<div>-->
           <!--<p>樱之国留学</p>-->
-        <button class="btn send" (click)="send()">发送</button>
+        <button class="btn send" (click)="send()" >发送</button>
         <!--</div>-->
       </div>
     </div>

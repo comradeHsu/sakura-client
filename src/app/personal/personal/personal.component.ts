@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class PersonalComponent implements OnInit {
 
   constructor() { }
+  actives: string[] = ['active', '', '', ''];
 
   ngOnInit() {
   }
-  actives: string[] = ['active', '', ''];
 
   togger(index: number): void {
-    const styles = ['', '', ''];
+    const styles = ['', '', '', ''];
     styles[index] = 'active';
     this.actives = styles;
   }

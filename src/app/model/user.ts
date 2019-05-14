@@ -7,6 +7,7 @@ export class User {
   realName: string;
   phoneNumber: string;
   icon: string;
+  assessed: boolean;
 }
 
 export class Assessment {
@@ -19,4 +20,13 @@ export class Assessment {
   schoolGpa: number;
   gpa: number;
   score: number;
+
+  public init(): Assessment {
+    this.schoolType = null;
+    this.japaneseLevel = null;
+    this.schoolGpa = null;
+    this.gpa = null;
+    this.score = null;
+    return this;
+  }
 }

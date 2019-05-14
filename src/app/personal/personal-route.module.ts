@@ -4,14 +4,16 @@ import {NgModule} from '@angular/core';
 import {PersonalCenterComponent} from './personal-center/personal-center.component';
 import {ApplyComponent} from './apply/apply.component';
 import {AccountComponent} from './account/account.component';
-import {AssessmentComponent} from "./assessment/assessment.component";
-import {LoginGuard} from "../guard/login.guard";
+import {AssessmentComponent} from './assessment/assessment.component';
+import {LoginGuard} from '../guard/login.guard';
+import {RecommendComponent} from './recommend/recommend.component';
 
 const routes: Routes = [
   {
     path: 'personal',
     component: PersonalComponent,
     canActivate: [LoginGuard],
+    // canActivateChild: [LoginGuard],
     children: [
       {
         path: '',
@@ -29,12 +31,17 @@ const routes: Routes = [
       {
         path: 'account',
         component: AccountComponent
+      },
+      {
+        path: 'recommend',
+        component: RecommendComponent
       }
     ]
   },
   {
     path: 'assessment',
-    component: AssessmentComponent
+    component: AssessmentComponent,
+    canActivate: [LoginGuard]
   }
 ];
 

@@ -63,3 +63,9 @@ body, button, dd, div, dl, dt, input, li, ol, p, ul {
 .uMedia i.ibg-evaluate {
   background-image: url(../../../assets/images/icon-user-evaluate.png);
 }
+.col-file {
+  width: 30%;
+}
+.uMedia i.ibg-file {
+  background-image: url(../../../assets/images/file.png);
+}

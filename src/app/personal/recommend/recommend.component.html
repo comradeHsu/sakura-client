@@ -1,0 +1,26 @@
+<div class="container end-area">
+  <div class="row">
+    <div class="col-md-12 schools">
+      <div class="list-area" *ngFor="let school of schools">
+        <div class="row">
+          <div class="col-md-2 col-xs-5">
+            <div class="img-area">
+              <a routerLink="/school/detail/{{ school.id }}"><img [src]="school.schoolIcon" alt="学校logo"></a>
+            </div>
+          </div>
+          <div class="col-md-10 col-xs-7">
+            <h4>{{ school.schoolName }}<font>/</font><span>{{ school.englishName }}</span></h4>
+            <p>世界排名：<span>{{ school.worldRanking }}</span>
+              国内排名：<span>{{ school.nationalRanking }}</span>
+            </p>
+            <a routerLink="/school/detail/{{ school.id }}">查看详情 ➜</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination">
+  <ngb-pagination [collectionSize]="totalCount" [(page)]="request.page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="getRecommend()"></ngb-pagination>
+</div>

@@ -1,10 +1,10 @@
 <div class="col-md-10">
   <div class="mainContent">
     <div class="uPanel">
-      <div class="uPanelHead">
+      <div *ngIf="!assessed" class="uPanelHead">
         抱歉，您尚未签约。日本留学申请流程尚未开启，您可以：
       </div>
-      <div class="uPanelBody clearfix apply status0">
+      <div *ngIf="!assessed" class="uPanelBody clearfix apply status0">
         <div class="row">
           <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=80040453&amp;site=qq&amp;menu=yes" target="_blank" class="col-xs-6">
             <div class="uMedia clearfix">
@@ -21,6 +21,35 @@
               <dl class="uMediaBody">
                 <dt>填写评估定位</dt>
                 <dd>填写评估定位表，获取日本留学评估方案</dd>
+              </dl>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div *ngIf="assessed" class="uPanelBody clearfix apply status0">
+        <div class="row">
+          <a href="../../../assets/语言培训协议书.docx" target="_blank" class="col-xs-6 col-file">
+            <div class="uMedia clearfix">
+              <i class="ibg-file"></i>
+              <dl class="uMediaBody">
+                <dt>语言培训协议书</dt>
+              </dl>
+            </div>
+          </a>
+          <a href="../../../assets/申请院校协议书.docx" class="col-xs-6 col-file">
+            <div class="uMedia clearfix">
+              <i class="ibg-file"></i>
+              <dl class="uMediaBody">
+                <dt>申请院校协议书</dt>
+              </dl>
+            </div>
+          </a>
+          <a href="../../../assets/办理签证协议书.docx" class="col-xs-6 col-file">
+            <div class="uMedia clearfix">
+              <i class="ibg-file"></i>
+              <dl class="uMediaBody">
+                <dt>办理签证协议书</dt>
               </dl>
             </div>
           </a>

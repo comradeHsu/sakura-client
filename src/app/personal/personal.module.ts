@@ -10,6 +10,7 @@ import {AssessmentComponent} from './assessment/assessment.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {LoginGuard} from '../guard/login.guard';
+import {RecommendComponent} from './recommend/recommend.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {LoginGuard} from '../guard/login.guard';
     PersonalCenterComponent,
     ApplyComponent,
     AccountComponent,
-    AssessmentComponent
+    AssessmentComponent,
+    RecommendComponent
   ],
   imports: [
     CommonModule,

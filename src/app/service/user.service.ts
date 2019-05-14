@@ -25,9 +25,9 @@ export class UserService {
   }
   loginOut(): Observable<ResponseResult> {
     const url = `http://${environment.domain}/api/user/session`;
-    const token = sessionStorage.getItem('token');
-    this.httpOptions.headers = this.httpOptions.headers.append('Token', token);
-    return this.http.delete(url, this.httpOptions)
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    return this.http.delete(url, {headers})
       .pipe(map(res => {
         return res as ResponseResult;
       }));

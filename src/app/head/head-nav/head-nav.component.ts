@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
+import {PersonalService} from '../../service/personal.service';
 
 @Component({
   selector: 'app-head-nav',
@@ -14,7 +15,8 @@ export class HeadNavComponent implements OnInit {
   isWillRegister = false;
   realName: string;
 
-  constructor(private service: UserService) { }
+  constructor(private service: UserService,
+              private personalService: PersonalService) { }
 
   ngOnInit() {
     const token = sessionStorage.getItem('token');
@@ -23,11 +25,11 @@ export class HeadNavComponent implements OnInit {
       this.isLogin = true;
       this.realName = user.realName;
     }
-    const expired = sessionStorage.getItem('expired');
-    console.log(expired);
-    if (expired != null) {
-      this.isWillLogin = true;
-    }
+    this.personalService.loginExpired.subscribe(data => {
+      if (data === true) {
+        this.isWillLogin = true;
+      }
+    });
   }
 
   willLogin() {
@@ -48,7 +50,8 @@ export class HeadNavComponent implements OnInit {
       sessionStorage.removeItem('token');
       sessionStorage.removeItem('user');
       this.isLogin = false;
-    });
+    },
+      error => console.log(error));
   }
 
   willRegister() {
