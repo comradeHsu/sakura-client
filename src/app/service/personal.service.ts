@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {map} from 'rxjs/internal/operators';
 import {ResponseResult} from '../model/response';
-import {BehaviorSubject, Observable} from 'rxjs/index';
+import {BehaviorSubject, Observable, Subject} from 'rxjs/index';
 import {environment} from '../../environments/environment';
-import {Assessment, User} from '../model/user';
+import {Agreement, Assessment, User} from '../model/user';
 import {Page} from '../model/page';
 
 
@@ -23,7 +23,7 @@ export class PersonalService {
    * 用于监听路由拦截的结果
    * @type {BehaviorSubject<any>}
    */
-  public loginExpired: BehaviorSubject<boolean> = new BehaviorSubject(null);
+  public loginExpired: Subject<boolean> = new Subject<boolean>();
 
   getToken(): Observable<ResponseResult> {
     const url = `http://${environment.domain}/qiniu/token`;
@@ -51,6 +51,26 @@ export class PersonalService {
     const options = { params: new HttpParams().set('page', request.page as string)
         .set('pageCount', request.pageCount as string), headers};
     return this.http.get(url, options).pipe(map(res => res as ResponseResult));
+  }
+
+  getUploadUrl(file: File, token: string): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    formData.append('token', token);
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'multipart/form-data'});
+    return this.http.post('http://upload-z0.qiniu.com', formData, {headers});
+  }
+
+  uploadAgreement(data: Agreement): Observable<ResponseResult> {
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    const url = `http://${environment.domain}/api/user/agreement`;
+    return this.http.post(url, data, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
+  getChildrens(): Observable<ResponseResult> {
+    const token: string = sessionStorage.getItem('token');
+    return null;
   }
 
 }

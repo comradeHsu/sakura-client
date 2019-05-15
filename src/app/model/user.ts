@@ -8,6 +8,7 @@ export class User {
   phoneNumber: string;
   icon: string;
   assessed: boolean;
+  userType: number;
 }
 
 export class Agreement {

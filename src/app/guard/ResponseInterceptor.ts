@@ -28,7 +28,7 @@ export class ResponseInterceptor implements HttpInterceptor {
           if (body.code === 403) {
             sessionStorage.removeItem('token');
             sessionStorage.removeItem('user');
-            this.router.navigate(['/']).then(res => console.log(res));
+            this.router.navigate(['/index']).then(res => console.log(res));
           }
         }
         break;

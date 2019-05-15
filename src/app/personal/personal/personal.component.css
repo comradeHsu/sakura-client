@@ -25,7 +25,7 @@
 }
 .mainBody {
   padding-bottom: 160px;
-  background: #f7f6fb url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDYAAACZCAMAAADjCEpWAAAAS1BMV…kid7zNZfVnQiqU7I6MjHxGebLLR1HUKf9rRChdkJGRzyn/AqJ1kIXIa534AAAAAElFTkSuQmCC) no-repeat 100% 100%;
+  background: #f7f6fb no-repeat 100% 100%;
 }
 .subContent {
   background: #fff;

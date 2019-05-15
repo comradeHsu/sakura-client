@@ -53,10 +53,16 @@
               </dl>
             </div>
           </a>
+          <div class="ctrl-select-area" *ngIf="user.userType === 2">
+            <select name="schoolType" >
+              <option [ngValue]=null>选择学生账号</option>
+            </select>
+            <i class="glyphicon glyphicon-triangle-bottom"></i>
+          </div>
           <div class="btn-group">
             <div class="col-sm-4 ">
               <label for="file" class="btn btn-default">上传语言培训协议</label>
-              <input id="file" type="file" style="display:none" accept=".gif,.jpg,.png,.jpeg" (change)="upload($event.target.files)">
+              <input id="file" type="file" style="display:none" accept=".gif,.jpg,.png,.jpeg" (change)="upload($event.target.files,1)">
             </div>
             <div class="col-sm-4 ">
               <label for="file1" class="btn btn-default">上传申请院校协议</label>

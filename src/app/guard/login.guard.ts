@@ -13,7 +13,7 @@ export class LoginGuard implements CanActivate, CanActivateChild {
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): boolean {
     const token = sessionStorage.getItem('token');
-    if (token != null) {
+    if (token !== null) {
       return true;
     } else {
       this.service.loginExpired.next(true);
