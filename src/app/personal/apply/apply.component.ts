@@ -22,8 +22,11 @@ export class ApplyComponent implements OnInit {
   ngOnInit() {
     const user: User = JSON.parse(sessionStorage.getItem('user'));
     this.user = user;
+    this.agreement.userId = null;
     if (user.userType === 1) {
       this.agreement.userId = user.id;
+    } else {
+      this.service.getChildrens().subscribe(data => this.childrens = data.data);
     }
     this.assessed = user.assessed;
     this.service.getToken().subscribe(data => this.token = data.data);
@@ -31,18 +34,22 @@ export class ApplyComponent implements OnInit {
 
   upload(files: FileList, index: number): void {
     const image: File = files[0];
+    if (this.agreement.userId === null) {
+      alert('请选择学生账号');
+      return;
+    }
     this.service.getUploadUrl(image, this.token).pipe(flatMap(data => {
       const dat = data as Qiniu;
       const imageUrl = `${Common.QINIU_DOMAIN}/${dat.key}`;
       switch (index) {
         case 1:
-          this.agreement.apply = image.name;
+          this.agreement.apply = imageUrl;
           break;
         case 2:
-          this.agreement.train = image.name;
+          this.agreement.train = imageUrl;
           break;
         case 3:
-          this.agreement.visa = image.name;
+          this.agreement.visa = imageUrl;
           break;
       }
       return this.service.uploadAgreement(this.agreement);

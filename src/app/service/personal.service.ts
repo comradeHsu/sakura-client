@@ -70,7 +70,9 @@ export class PersonalService {
 
   getChildrens(): Observable<ResponseResult> {
     const token: string = sessionStorage.getItem('token');
-    return null;
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    const url = `http://${environment.domain}/api/user/children`;
+    return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
   }
 
 }

@@ -54,8 +54,9 @@
             </div>
           </a>
           <div class="ctrl-select-area" *ngIf="user.userType === 2">
-            <select name="schoolType" >
+            <select name="schoolType" [(ngModel)]="agreement.userId">
               <option [ngValue]=null>选择学生账号</option>
+              <option *ngFor="let child of childrens" [ngValue]=child.id>{{ child.realName }}</option>
             </select>
             <i class="glyphicon glyphicon-triangle-bottom"></i>
           </div>
