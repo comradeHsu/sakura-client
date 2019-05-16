@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core'
 import {TalkService} from '../service/talk.service';
 import {User} from '../model/user';
 import {Message} from '../model/message';
+import {StringUtils} from '../util/StringUtils';
 
 @Component({
   selector: 'app-talk',
@@ -37,6 +38,10 @@ export class TalkComponent implements OnInit {
   }
 
   send(): void {
+    if (StringUtils.isEmpty(this.message)) {
+      return;
+    }
+    console.log(this.message);
     this.service.send(this.message);
     this.messages.push(Message.buildMessage(this.message));
     this.message = null;

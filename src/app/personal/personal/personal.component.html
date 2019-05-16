@@ -15,8 +15,11 @@
         <div class="subContent text-center">
           <!--客户左侧菜单栏开始-->
           <dl>
-            <dt><img id="left_header" src="http://www.qianchengriben.com/Public/Home/images/hed-default.png" alt="用户头像"></dt>
-            <dd>一个小时不简单</dd>
+            <dt>
+              <img id="left_header" *ngIf="!user.icon" src="http://www.qianchengriben.com/Public/Home/images/hed-default.png" alt="用户头像">
+              <img id="left_header" *ngIf="user.icon" [src]="user.icon" alt="用户头像">
+            </dt>
+            <dd>{{ user.realName }}</dd>
           </dl>
           <ul>
             <li><a routerLink="/personal/personal-center" [class]="actives[0]" (click)="togger(0)">个人中心</a></li>
