@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
 
   username: string;
   password: string;
+  userType: number;
   confirmPassword: string;
 
   fail = false;
@@ -35,9 +36,14 @@ export class RegisterComponent implements OnInit {
       this.failAlert('两次输入的密码不一致');
       return;
     }
+    if (this.userType == null) {
+      this.failAlert('请选择账号类型');
+      return;
+    }
     const user = new User();
     user.username = this.username;
     user.password = this.password;
+    user.userType = this.userType;
     this.service.register(user).subscribe(res => {
       if (res.code !== 200) {
         this.failAlert(res.message);

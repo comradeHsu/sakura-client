@@ -67,11 +67,11 @@
             </div>
             <div class="col-sm-4 ">
               <label for="file1" class="btn btn-default">上传申请院校协议</label>
-              <input id="file1" type="file" style="display:none">
+              <input id="file1" type="file" style="display:none" (change)="upload($event.target.files,2)">
             </div>
             <div class="col-sm-4 ">
               <label for="file2" class="btn btn-default">上传办理签证协议</label>
-              <input id="file2" type="file" style="display:none">
+              <input id="file2" type="file" style="display:none" (change)="upload($event.target.files,3)">
             </div>
           </div>
         </div>
