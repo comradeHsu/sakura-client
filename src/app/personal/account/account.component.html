@@ -25,16 +25,31 @@
           </dd>
           <dd class="uAvatarTip_nickname" style="color: #a51a30;margin-left: 5px;"></dd>
         </dl>
-
       </div>
+
+      <div class="uCellHead">家长账号</div>
+      <div class="uCellBody clearfix">
+        <dl class="uNicName">
+          <div class="ctrl-select-area">
+            <select name="schoolType" [(ngModel)]="user.parentId">
+              <option [ngValue]=null>家长账号</option>
+              <option  *ngFor="let parent of parents" [ngValue]="parent.id">{{ parent.username }}</option>
+            </select>
+            <i class="glyphicon glyphicon-triangle-bottom"></i>
+          </div>
+          <button type="button" class="btn btn-red-darken" (click)="bindParent()">提交</button>
+          <dd class="uAvatarTip_nickname" style="color: #a51a30;margin-left: 5px;"></dd>
+        </dl>
+      </div>
+
       <div class="uCellHead">密码修改</div>
       <div class="uCellBody clearfix">
         <ul class="uUpdatePassword">
           <li><span>旧密码</span><input type="password" id="oldPwd" name="oldPwd" [(ngModel)]="passwordData.oldPassword" /></li>
           <li><span>新密码</span><input type="password" id="newPwd" name="newPwd" [(ngModel)]="passwordData.newPassword" />
             <button type="button" class="btn btn-red-darken" id="passwordBtn" (click)="editPassword()">提交</button>
-            <span class="uAvatarTip_pwd" style="color: #a51a30;margin-left: 5px;"></span></li>
-
+            <span class="uAvatarTip_pwd" style="color: #a51a30;margin-left: 5px;"></span>
+          </li>
         </ul>
       </div>
     </div>

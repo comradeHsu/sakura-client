@@ -29,6 +29,7 @@ export class AccountComponent implements OnInit {
   fail: boolean = false;
   message: string;
   realName: string;
+  parents: User[];
   ngOnInit() {
     this.service.getToken().subscribe(data => {
       this.token = data.data;
@@ -40,6 +41,7 @@ export class AccountComponent implements OnInit {
         this.file.value = this.user.icon;
       }
     });
+    this.service.getParents().subscribe(data => {this.parents = data.data; });
   }
 
   upload(value: FileList) {
@@ -90,6 +92,12 @@ export class AccountComponent implements OnInit {
     user.realName = this.realName;
     this.service.editUser(user).subscribe(data => {
       console.log(data);
+    });
+  }
+
+  bindParent(): void {
+    this.service.editUser({parentId: this.user.parentId} as User).subscribe(data => {
+      this.failAlert(data.message);
     });
   }
 }

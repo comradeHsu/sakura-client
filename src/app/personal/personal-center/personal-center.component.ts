@@ -10,10 +10,18 @@ export class PersonalCenterComponent implements OnInit {
 
   constructor() { }
   user: User;
-
+  isTalk: boolean = false;
   ngOnInit() {
     const user: User = JSON.parse(sessionStorage.getItem('user'));
     this.user = user;
+  }
+
+  openTalk(): void {
+    this.isTalk = true;
+  }
+
+  closeTalk(value): void {
+    this.isTalk = value;
   }
 
 }

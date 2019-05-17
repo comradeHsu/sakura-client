@@ -14,13 +14,13 @@ import {PersonalModule} from './personal/personal.module';
 import {FloatNavComponent} from './float-nav/float-nav.component';
 import {TalkComponent} from './talk/talk.component';
 import {ResponseInterceptor} from './guard/ResponseInterceptor';
+import {TalkModule} from './talk/talk.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    FloatNavComponent,
-    TalkComponent
+    FloatNavComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +31,8 @@ import {ResponseInterceptor} from './guard/ResponseInterceptor';
     NgbModule,
     NewsModule,
     SchoolModule,
-    PersonalModule
+    PersonalModule,
+    TalkModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true }

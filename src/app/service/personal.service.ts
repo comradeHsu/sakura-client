@@ -21,7 +21,7 @@ export class PersonalService {
 
   /**
    * 用于监听路由拦截的结果
-   * @type {BehaviorSubject<any>}
+   * @type {Subject<any>}
    */
   public loginExpired: Subject<boolean> = new Subject<boolean>();
 
@@ -73,6 +73,11 @@ export class PersonalService {
     const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
     const url = `http://${environment.domain}/api/user/children`;
     return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
+  getParents(): Observable<ResponseResult> {
+    const url = `http://${environment.domain}/api/user/parents`;
+    return this.http.get(url).pipe(map(res => res as ResponseResult));
   }
 
 }

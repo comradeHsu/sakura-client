@@ -186,3 +186,32 @@ blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, 
   border: none;
   color: #fff;
 }
+.ctrl-select-area select{
+  width: 63%;
+  height: 34px;
+  margin-left: 0rem;
+  -webkit-appearance: none;
+  padding: 0 0.6rem;
+  margin-right: -1.5rem;
+}
+.ctrl-select-area i {
+  color: #999;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+.ctrl-select-area {
+  float: left;
+  width: 34%;
+}
+.alert{
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  width: 20%;
+  margin-left: 33rem;
+}
+.alert strong{
+  text-align: center;
+  padding-left: 4rem;
+}
+

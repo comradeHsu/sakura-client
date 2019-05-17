@@ -11,7 +11,7 @@
             <dt>在线咨询</dt>
             <dd>快速了解日本留学相关信息</dd>
           </dl>
-          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=80040453&amp;site=qq&amp;menu=yes" target="_blank" class="uMediaLink">立即咨询</a>
+          <a (click)="openTalk()" class="uMediaLink">立即咨询</a>
         </div>
         <div class="uMedia clearfix">
           <i class="ibg-evaluate"></i>
@@ -25,3 +25,4 @@
     </div>
   </div>
 </div>
+<app-talk *ngIf="isTalk" (closeTalk)="closeTalk($event)"></app-talk>

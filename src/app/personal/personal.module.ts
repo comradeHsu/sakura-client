@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
+import {TalkModule} from '../talk/talk.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {RecommendComponent} from './recommend/recommend.component';
     PersonalRouteModule,
     HeadModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    TalkModule
   ],
   providers: [
     LoginGuard
