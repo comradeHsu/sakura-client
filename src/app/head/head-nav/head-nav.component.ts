@@ -2,11 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
 import {PersonalService} from '../../service/personal.service';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-head-nav',
   templateUrl: './head-nav.component.html',
-  styleUrls: ['./head-nav.component.css']
+  styleUrls: ['./head-nav.component.css'],
+  animations: [
+    trigger('dialog', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.5s', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('1s', style({ opacity: 0 }))
+      ])
+    ]),
+  ]
 })
 export class HeadNavComponent implements OnInit {
 

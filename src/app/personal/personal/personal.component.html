@@ -53,7 +53,9 @@
           <a [routerLink]="routerLinks[6]">留学<span class="caret"></span></a>
         </li>
       </ul>
-      <router-outlet></router-outlet>
+      <div [@routeAnimations]="prepareRoute(outlet)" >
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
     </div>
   </div>
 </div>

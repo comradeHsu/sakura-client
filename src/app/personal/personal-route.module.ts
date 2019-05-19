@@ -23,19 +23,23 @@ const routes: Routes = [
       },
       {
         path: 'personal-center',
-        component: PersonalCenterComponent
+        component: PersonalCenterComponent,
+        data: {animation: 'center'}
       },
       {
         path: 'apply',
-        component: ApplyComponent
+        component: ApplyComponent,
+        data: {animation: 'apply'}
       },
       {
         path: 'account',
-        component: AccountComponent
+        component: AccountComponent,
+        data: {animation: 'account'}
       },
       {
         path: 'recommend',
-        component: RecommendComponent
+        component: RecommendComponent,
+        data: {animation: 'recommend'}
       },
       {
         path: 'data',

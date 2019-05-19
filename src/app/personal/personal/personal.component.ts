@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
+import {RouterOutlet} from '@angular/router';
+import {RouteAnimation} from '../../animations/route-animations';
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.css']
+  styleUrls: ['./personal.component.css'],
+  animations: [
+    RouteAnimation
+  ]
 })
 export class PersonalComponent implements OnInit {
 
@@ -44,5 +49,9 @@ export class PersonalComponent implements OnInit {
       this.routerLinks[index] = this.allLinks[index];
     }
     this.classes[process - 1] = 'doing';
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 }

@@ -3,7 +3,7 @@ import {Agreement, User} from '../../model/user';
 import {PersonalService} from '../../service/personal.service';
 import {Common} from '../../model/common';
 import {Qiniu} from '../../model/file';
-import {flatMap} from 'tslint/lib/utils';
+import {flatMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-data',
