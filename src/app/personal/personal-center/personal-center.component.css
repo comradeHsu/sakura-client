@@ -63,3 +63,101 @@ dd {
   height: 80px;
   background: no-repeat 50% 50%;
 }
+.step-progress {
+  margin-top: 60px;
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.step li {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.step-progress > li.active > a, .step-progress > li.active > a:hover, .step-progress > li.active > a:focus {
+  color: #00b8f5;
+  background: transparent;
+}
+.step-progress > li > a:before {
+  position: absolute;
+  z-index: 2;
+  top: -35px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  line-height: 2rem;
+  box-shadow: 0 0 0 5px #ebebeb;
+}
+.step-progress > li > a span.caret {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: rotate(180deg);
+  top: -4px;
+}
+.step-progress > li > a:after {
+  content: "";
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+  background-color: #ebebeb;
+  float: left;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+.step-progress > li.active > a:after, .step-progress > li.active > a:hover:after, .step-progress > li.active > a:focus:after {
+  background-color: #00b8f5;
+}
+.step-progress > li.active > a:before, .step-progress > li.active > a:hover:before, .step-progress > li.active > a:focus:before {
+  background-color: #00b8f5;
+  color: #ffffff;
+}
+.step-progress > li > a:before {
+  position: absolute;
+  z-index: 2;
+  top: -35px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  line-height: 2rem;
+  box-shadow: 0 0 0 5px #ebebeb;
+}
+.step{
+  counter-reset:flag;
+}
+.step li a:before {
+  content: counter(flag);
+  counter-increment: flag;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+.step-progress > li.doing > a, .step-progress > li.doing > a:hover, .step-progress > li.doing > a:focus {
+  color: #ff7f00;
+  background: transparent;
+}
+.step-progress > li.doing > a:before, .step-progress > li.doing > a:hover:before, .step-progress > li.doing > a:focus:before {
+  background-color: #ff7f00;
+  color: #ffffff;
+}
+.step-progress > li.doing > a:after, .step-progress > li.doing > a:hover:after, .step-progress > li.doing > a:focus:after {
+  background-color: #ff7f00;
+}

@@ -8,14 +8,10 @@
         <h4 class="modal-title" id="feedback-modal-label">服务咨询</h4>
       </div>
       <div class="modal-body">
-        <div class="message">
-          <ul *ngFor="let message of messages">
-            <li *ngIf="message.type === 1" class="left">
-              <p><label>樱之国客服</label><span>{{ message.time | date:'shortTime' }}</span></p>
-              <p>{{ message.content }}</p>
-            </li>
-            <li *ngIf="message.type === 0" class="right">
-              <p><label>我</label><span>{{ message.time | date:'shortTime' }}</span></p>
+        <div class="message" >
+          <ul>
+            <li *ngFor="let message of messages" [class]="htmlClass[message.type]">
+              <p><label>{{ spans[message.type] }}</label><span>{{ message.time | date:'shortTime' }}</span></p>
               <p>{{ message.content }}</p>
             </li>
           </ul>

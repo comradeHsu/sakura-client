@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
 import {TalkModule} from '../talk/talk.module';
+import {DataComponent} from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {TalkModule} from '../talk/talk.module';
     ApplyComponent,
     AccountComponent,
     AssessmentComponent,
-    RecommendComponent
+    RecommendComponent,
+    DataComponent
   ],
   imports: [
     CommonModule,

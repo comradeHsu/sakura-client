@@ -19,7 +19,7 @@
         <div class="form-area">
           <div class="line-area">
             <div class="input-area size-small">
-              <input type="tel" placeholder="请输入你的手机号" [(ngModel)]="username" id="reg_tel" name="reg_tel">
+              <input type="tel" placeholder="请输入账号" [(ngModel)]="username" id="reg_tel" name="reg_tel">
             </div>
           </div>
           <div class="line-area">
@@ -32,12 +32,34 @@
               <input type="password" placeholder="请确认密码" [(ngModel)]="confirmPassword" name="reg_pwd">
             </div>
           </div>
+          <div class="line-area">
+            <div class="input-area">
+              <input type="number" placeholder="年龄" [(ngModel)]="user.age"  name="age">
+            </div>
+          </div>
+          <div class="line-area">
+            <div class="input-area">
+              <input type="text" placeholder="真实姓名" [(ngModel)]="user.realName"  name="realName">
+            </div>
+          </div>
+          <div class="line-area">
+            <div class="input-area size-small">
+              <input type="tel" placeholder="请输入你的手机号" [(ngModel)]="user.phoneNumber"  name="phoneNumber">
+            </div>
+          </div>
           <label class="radio-inline">
             <input type="radio" name="userType" [(ngModel)]="userType" [value] ="2" checked>家长
           </label>
           <label class="radio-inline">
             <input type="radio" name="userType" [(ngModel)]="userType"  [value] ="1">学生
           </label>
+          <div class="line-area" *ngIf="userType === 1">
+            <select name="schoolType" [(ngModel)]="user.parentId">
+              <option [ngValue]=null>选择家长手机号</option>
+              <option *ngFor="let parent of parents" [ngValue]=parent.id>{{ parent.phoneNumber }}</option>
+            </select>
+            <i class="glyphicon glyphicon-triangle-bottom"></i>
+          </div>
           <div class="bottom-area">
             <!--<div class="checkbox-area pull-left">-->
               <!--<input type="checkbox">-->

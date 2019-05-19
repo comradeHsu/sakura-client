@@ -1,30 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import {Agreement, User} from '../../model/user';
 import {PersonalService} from '../../service/personal.service';
-import {flatMap} from 'rxjs/operators';
-import {Qiniu} from '../../model/file';
 import {Common} from '../../model/common';
+import {Qiniu} from '../../model/file';
+import {flatMap} from 'tslint/lib/utils';
 
 @Component({
-  selector: 'app-apply',
-  templateUrl: './apply.component.html',
-  styleUrls: ['./apply.component.css']
+  selector: 'app-data',
+  templateUrl: './data.component.html',
+  styleUrls: ['./data.component.css']
 })
-export class ApplyComponent implements OnInit {
+export class DataComponent implements OnInit {
 
   constructor(private service: PersonalService) { }
 
-  assessed: boolean;
-  agreement: Agreement = new Agreement();
-  token: string;
   user: User;
+  token: string;
+  agreement: Agreement = new Agreement();
   childrens: User[];
-  isTalk: boolean = false;
-  displays: any[] = [
-    {display: 'none'},
-    {display: 'none'},
-    {display: 'none'}
-    ];
   ngOnInit() {
     const user: User = JSON.parse(sessionStorage.getItem('user'));
     this.user = user;
@@ -34,7 +27,6 @@ export class ApplyComponent implements OnInit {
     } else {
       this.service.getChildrens().subscribe(data => this.childrens = data.data);
     }
-    this.assessed = user.assessed;
     this.service.getToken().subscribe(data => this.token = data.data);
   }
 
@@ -62,19 +54,4 @@ export class ApplyComponent implements OnInit {
     })).subscribe(data => console.log(data.message));
   }
 
-  openTalk(): void {
-    this.isTalk = true;
-  }
-
-  closeTalk(value): void {
-    this.isTalk = value;
-  }
-
-  show(index: number): void {
-    this.displays[index] = {display: 'block'};
-  }
-
-  hide(index: number): void {
-    this.displays[index] = {display: 'none'};
-  }
 }

@@ -4,6 +4,7 @@ import {IndexComponent} from './index/index.component';
 import {NewsListComponent} from './news/news-list/news-list.component';
 import {SchoolsComponent} from './school/schools/schools.component';
 import {TalkComponent} from "./talk/talk.component";
+import {RegisterComponent} from "./head/register/register.component";
 /**
  * Created by xuhui on 2019/05/07.
  */
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'talk',
     component: TalkComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   }
 ];
 

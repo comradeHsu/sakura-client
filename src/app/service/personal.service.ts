@@ -57,7 +57,7 @@ export class PersonalService {
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
     formData.append('token', token);
-    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'multipart/form-data'});
+    const headers: HttpHeaders = new HttpHeaders({ Accept: 'application/json'});
     return this.http.post('http://upload-z0.qiniu.com', formData, {headers});
   }
 

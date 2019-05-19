@@ -20,7 +20,8 @@ import {RouteModule} from '../route.module';
     RouteModule
   ],
   exports: [
-    HeadNavComponent
+    HeadNavComponent,
+    RegisterComponent
   ]
 })
 export class HeadModule { }

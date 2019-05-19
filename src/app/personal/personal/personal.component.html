@@ -30,6 +30,29 @@
           <!--客户左侧菜单栏结束-->
         </div>
       </div>
+      <ul class="nav nav-pills nav-justified step step-progress" id="stepUL">
+        <li [class]="classes[0]">
+          <a [routerLink]="routerLinks[0]" >能力评估<span class="caret"></span></a>
+        </li>
+        <li [class]="classes[1]">
+          <a [routerLink]="routerLinks[1]">院校选择<span class="caret"></span></a>
+        </li>
+        <li [class]="classes[2]">
+          <a [routerLink]="routerLinks[2]">签署协议<span class="caret"></span></a>
+        </li>
+        <li [class]="classes[3]">
+          <a [routerLink]="routerLinks[3]">提交申请资料<span class="caret"></span></a>
+        </li>
+        <li [class]="classes[4]">
+          <a [routerLink]="routerLinks[4]" >协议办理<span class="caret"></span></a>
+        </li>
+        <li [class]="classes[5]">
+          <a [routerLink]="routerLinks[5]">取得内诺<span class="caret"></span></a>
+        </li>
+        <li [class]="classes[6]">
+          <a [routerLink]="routerLinks[6]">留学<span class="caret"></span></a>
+        </li>
+      </ul>
       <router-outlet></router-outlet>
     </div>
   </div>

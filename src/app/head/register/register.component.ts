@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {UserService} from "../../service/user.service";
 import {User} from "../../model/user";
+import {PersonalService} from "../../service/personal.service";
 
 @Component({
   selector: 'app-register',
@@ -14,14 +15,19 @@ export class RegisterComponent implements OnInit {
 
   username: string;
   password: string;
-  userType: number;
+  userType: number = 2;
   confirmPassword: string;
 
   fail = false;
   message: string;
-  constructor(private service: UserService) { }
+  user: User = new User();
+  parents: User[];
+  constructor(private service: UserService,
+              private personalService: PersonalService) { }
 
   ngOnInit() {
+    this.user.parentId = null;
+    this.personalService.getParents().subscribe(data => this.parents = data.data);
   }
   closedDialog() {
     this.closeRegister.emit(false);
@@ -40,15 +46,16 @@ export class RegisterComponent implements OnInit {
       this.failAlert('请选择账号类型');
       return;
     }
-    const user = new User();
+    const user = this.user;
     user.username = this.username;
     user.password = this.password;
     user.userType = this.userType;
     this.service.register(user).subscribe(res => {
       if (res.code !== 200) {
         this.failAlert(res.message);
+      } else {
+        this.failAlert('注册成功');
       }
-      console.log(res.data);
     });
   }
 

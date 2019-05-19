@@ -12,9 +12,9 @@ import {NewsModule} from './news/news.module';
 import {SchoolModule} from './school/school.module';
 import {PersonalModule} from './personal/personal.module';
 import {FloatNavComponent} from './float-nav/float-nav.component';
-import {TalkComponent} from './talk/talk.component';
 import {ResponseInterceptor} from './guard/ResponseInterceptor';
 import {TalkModule} from './talk/talk.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import {TalkModule} from './talk/talk.module';
     NewsModule,
     SchoolModule,
     PersonalModule,
-    TalkModule
+    TalkModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true }

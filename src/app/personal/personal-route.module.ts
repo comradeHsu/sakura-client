@@ -7,6 +7,7 @@ import {AccountComponent} from './account/account.component';
 import {AssessmentComponent} from './assessment/assessment.component';
 import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
+import {DataComponent} from './data/data.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'recommend',
         component: RecommendComponent
+      },
+      {
+        path: 'data',
+        component: DataComponent
       }
     ]
   },

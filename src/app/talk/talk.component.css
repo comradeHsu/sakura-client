@@ -127,7 +127,11 @@ h4, .h4 {
   height: 2px;
   background-color: #412828;
 }
-.message ul{
+.message ul {
+  padding-left: 1rem;
+}
+
+.message li{
   margin-top: 10px;
   background-color: #337ab742;
 }

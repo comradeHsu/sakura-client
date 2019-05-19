@@ -1,0 +1,31 @@
+<div class="col-md-10">
+  <div class="mainContent">
+    <div class="uPanel">
+      <div class="uPanelBody clearfix apply status0">
+        <div class="row">
+          <div class="ctrl-select-area" *ngIf="user.userType === 2">
+            <select name="schoolType" [(ngModel)]="agreement.userId">
+              <option [ngValue]=null>选择学生账号</option>
+              <option *ngFor="let child of childrens" [ngValue]=child.id>{{ child.realName }}</option>
+            </select>
+            <i class="glyphicon glyphicon-triangle-bottom"></i>
+          </div>
+          <div class="btn-group">
+            <div class="col-sm-4 ">
+              <label for="file" class="btn btn-default">上传语言培训协议</label>
+              <input id="file" type="file" style="display:none" accept=".gif,.jpg,.png,.jpeg" (change)="upload($event.target.files,1)">
+            </div>
+            <div class="col-sm-4 ">
+              <label for="file1" class="btn btn-default">上传申请院校协议</label>
+              <input id="file1" type="file" style="display:none" (change)="upload($event.target.files,2)">
+            </div>
+            <div class="col-sm-4 ">
+              <label for="file2" class="btn btn-default">上传办理签证协议</label>
+              <input id="file2" type="file" style="display:none" (change)="upload($event.target.files,3)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

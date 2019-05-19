@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {TalkService} from '../service/talk.service';
 import {User} from '../model/user';
 import {Message} from '../model/message';
@@ -13,10 +13,13 @@ export class TalkComponent implements OnInit {
 
   @Output() closeTalk = new EventEmitter();
 
-  constructor(private service: TalkService) { }
+  constructor(private service: TalkService,
+              private el: ElementRef) { }
   userId: number;
   messages: Message[] = [];
   message: string;
+  htmlClass: string[] = ['right', 'left'];
+  spans: string[] = ['我', '樱之国客服'];
   ngOnInit() {
     const user: User = JSON.parse(sessionStorage.getItem('user'));
     this.userId = user.id;
@@ -41,9 +44,10 @@ export class TalkComponent implements OnInit {
     if (StringUtils.isEmpty(this.message)) {
       return;
     }
-    console.log(this.message);
     this.service.send(this.message);
     this.messages.push(Message.buildMessage(this.message));
     this.message = null;
+    const ele = this.el.nativeElement.querySelector('.message');
+    setTimeout(() => {ele.scrollTop = ele.scrollHeight - ele.clientHeight; }, 600);
   }
 }

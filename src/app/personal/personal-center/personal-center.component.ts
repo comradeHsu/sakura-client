@@ -11,6 +11,7 @@ export class PersonalCenterComponent implements OnInit {
   constructor() { }
   user: User;
   isTalk: boolean = false;
+  style: any = {};
   ngOnInit() {
     const user: User = JSON.parse(sessionStorage.getItem('user'));
     this.user = user;
@@ -24,4 +25,7 @@ export class PersonalCenterComponent implements OnInit {
     this.isTalk = value;
   }
 
+  mouseEnter() {
+    this.style = {'color': '#00b8f5', 'background': 'transparent'};
+  }
 }

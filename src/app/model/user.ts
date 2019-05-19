@@ -9,6 +9,7 @@ export class User {
   icon: string;
   assessed: boolean;
   userType: number;
+  userProcess: number;
 }
 
 export class Agreement {
