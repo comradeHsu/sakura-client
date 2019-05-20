@@ -7,12 +7,14 @@ import {NewsListComponent} from './news-list/news-list.component';
 import {NewsComponent} from './news/news.component';
 import {HeadModule} from '../head/head.module';
 import {NewsDetailComponent} from './news-detail/news-detail.component';
+import {SafeHtmlPipe} from '../pipe/SafeHtmlPipe';
 
 @NgModule({
   declarations: [
     NewsListComponent,
     NewsComponent,
-    NewsDetailComponent
+    NewsDetailComponent,
+    SafeHtmlPipe
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,6 @@ import {NewsDetailComponent} from './news-detail/news-detail.component';
     NgbModule,
     NewsRouteModule,
     HeadModule
-  ],
+  ]
 })
 export class NewsModule { }

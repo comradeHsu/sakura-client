@@ -256,3 +256,15 @@ div {
   text-align: center;
   display: block;
 }
+.mouse:hover{
+  width: 120%;
+  height: 120%;
+  margin-left: -10%;
+  border: 1px solid;
+  color: black;
+  border-radius: 1%;
+  box-shadow: 0 0 3px black;
+}
+.mouse:hover .col-xs-5 {
+  padding-left: 7rem;
+}

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ArticleService} from '../../service/article.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Article} from '../../model/article';
 
 @Component({
   selector: 'app-news-detail',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './news-detail.component.html',
   styleUrls: ['./news-detail.component.css']
 })
