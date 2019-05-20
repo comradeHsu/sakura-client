@@ -17,23 +17,22 @@ const routes: Routes = [
   },
   {
     path: 'index',
-    component: IndexComponent
+    component: IndexComponent,
+    data: {animation: 'index'}
   },
   {
     path: 'news-list',
     component: NewsListComponent,
+    data: {animation: 'news'}
   },
   {
     path: 'schools',
     component: SchoolsComponent,
+    data: {animation: 'school'}
   },
   {
     path: 'talk',
     component: TalkComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
   }
 ];
 

@@ -86,3 +86,6 @@
 .alert{
   text-align: center;
 }
+.text img {
+  width: 100%;
+}

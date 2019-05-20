@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
 import {PersonalService} from '../../service/personal.service';
+import {RouterOutlet} from '@angular/router';
+import {RouteAnimation} from '../../animations/route-animations';
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.css']
+  styleUrls: ['./personal.component.css'],
+  animations: [
+    RouteAnimation
+  ]
 })
 export class PersonalComponent implements OnInit {
 
@@ -62,4 +67,9 @@ export class PersonalComponent implements OnInit {
     }
     this.service.view.next(message);
   }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
 }

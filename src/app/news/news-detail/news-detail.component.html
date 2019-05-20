@@ -27,7 +27,7 @@
                 <i><img src="http://www.qianchengriben.com/Public/Home/images/icon-news-1.png" alt="">{{ article.readCount }}</i>
               </span>
             </div>
-            <div class="text" [innerHtml]="article.content">
+            <div class="text" [innerHtml]="article.content | safeHtml">
             </div>
             <div class="footer">
               <span>非特殊说明，本文版权原作者，转载请注明出处</span>
