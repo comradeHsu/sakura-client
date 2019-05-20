@@ -8,6 +8,7 @@ import {AssessmentComponent} from './assessment/assessment.component';
 import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
 import {DataComponent} from './data/data.component';
+import {ViewComponent} from "./view/view.component";
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'data',
         component: DataComponent
+      },
+      {
+        path: 'view',
+        component: ViewComponent
       }
     ]
   },

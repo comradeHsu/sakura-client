@@ -20,6 +20,12 @@ export class PersonalService {
   constructor(private http: HttpClient) { }
 
   /**
+   * 用于监听view
+   * type {Subject<any>}
+   */
+  public view: Subject<string> = new Subject<string>();
+
+  /**
    * 用于监听路由拦截的结果
    * type {Subject<any>}
    */

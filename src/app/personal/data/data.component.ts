@@ -18,7 +18,7 @@ export class DataComponent implements OnInit {
   token: string;
   agreement: Agreement = new Agreement();
   childrens: User[];
-  existAgreement: Agreement;
+  existAgreement: Agreement = new Agreement();
   status: { [key: number]: boolean; } = {
     1: true,
     2: true,
@@ -85,7 +85,6 @@ export class DataComponent implements OnInit {
   getAgreement(): void {
     this.service.getUserAgreement().subscribe(data => {
       this.existAgreement = data.data;
-      console.log(data.data);
       if (this.existAgreement.apply) {
         this.status[1] = false;
       }

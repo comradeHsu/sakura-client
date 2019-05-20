@@ -44,13 +44,13 @@
           <a [routerLink]="routerLinks[3]">提交申请资料<span class="caret"></span></a>
         </li>
         <li [class]="classes[4]">
-          <a [routerLink]="routerLinks[4]" >协议办理<span class="caret"></span></a>
+          <a [routerLink]="routerLinks[4]" [queryParams]="{type:1}" (click)="sendMessage(1)">协议办理<span class="caret"></span></a>
         </li>
         <li [class]="classes[5]">
-          <a [routerLink]="routerLinks[5]">取得内诺<span class="caret"></span></a>
+          <a [routerLink]="routerLinks[5]" [queryParams]="{type:2}" (click)="sendMessage(2)">取得内诺<span class="caret"></span></a>
         </li>
         <li [class]="classes[6]">
-          <a [routerLink]="routerLinks[6]">留学<span class="caret"></span></a>
+          <a [routerLink]="routerLinks[6]" [queryParams]="{type:3}" (click)="sendMessage(3)">留学<span class="caret"></span></a>
         </li>
       </ul>
       <router-outlet></router-outlet>

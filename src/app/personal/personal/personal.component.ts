@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
+import {PersonalService} from '../../service/personal.service';
 
 @Component({
   selector: 'app-personal',
@@ -8,16 +9,16 @@ import {User} from '../../model/user';
 })
 export class PersonalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PersonalService) { }
   actives: string[] = ['active', '', '', ''];
   classes: string[] = ['', '', '', '', '', '', ''];
   allLinks: string[] = ['/personal/personal-center',
     '/personal/recommend',
     '/personal/apply',
     '/personal/data',
-    null,
-    null,
-    null
+    '/personal/view',
+    '/personal/view',
+    '/personal/view'
   ];
   routerLinks: string[] = ['/personal/personal-center', null, null, null, null, null, null];
   user: User;
@@ -44,5 +45,21 @@ export class PersonalComponent implements OnInit {
       this.routerLinks[index] = this.allLinks[index];
     }
     this.classes[process - 1] = 'doing';
+  }
+
+  sendMessage(index: number) {
+    let message;
+    switch (index) {
+      case 1:
+        message = '协议办理结束';
+        break;
+      case 2:
+        message = '取得内诺成功';
+        break;
+      case 3:
+        message = '办理结束等待通知';
+        break;
+    }
+    this.service.view.next(message);
   }
 }

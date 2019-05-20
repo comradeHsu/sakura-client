@@ -13,6 +13,7 @@ import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
 import {TalkModule} from '../talk/talk.module';
 import {DataComponent} from './data/data.component';
+import {ViewComponent} from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {DataComponent} from './data/data.component';
     AccountComponent,
     AssessmentComponent,
     RecommendComponent,
-    DataComponent
+    DataComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,
