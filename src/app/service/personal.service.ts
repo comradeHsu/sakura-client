@@ -21,7 +21,7 @@ export class PersonalService {
 
   /**
    * 用于监听路由拦截的结果
-   * @type {Subject<any>}
+   * type {Subject<any>}
    */
   public loginExpired: Subject<boolean> = new Subject<boolean>();
 
@@ -68,6 +68,13 @@ export class PersonalService {
     return this.http.post(url, data, {headers}).pipe(map(res => res as ResponseResult));
   }
 
+  uploadFile(data: any): Observable<ResponseResult> {
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    const url = `http://${environment.domain}/api/file/saveFile`;
+    return this.http.post(url, data, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
   getChildrens(): Observable<ResponseResult> {
     const token: string = sessionStorage.getItem('token');
     const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
@@ -78,6 +85,17 @@ export class PersonalService {
   getParents(): Observable<ResponseResult> {
     const url = `http://${environment.domain}/api/user/parents`;
     return this.http.get(url).pipe(map(res => res as ResponseResult));
+  }
+
+  /**
+   * 获取协议
+   * returns {Observable<ResponseResult>}
+   */
+  getUserAgreement(): Observable<ResponseResult> {
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    const url = `http://${environment.domain}/api/user/agreement`;
+    return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
   }
 
 }

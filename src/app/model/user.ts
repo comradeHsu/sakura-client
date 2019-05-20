@@ -17,6 +17,7 @@ export class Agreement {
   apply: string;
   train: string;
   visa: string;
+  otherFile: string;
 }
 
 export class Assessment {

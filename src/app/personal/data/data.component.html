@@ -17,11 +17,33 @@
             </div>
             <div class="col-sm-4 ">
               <label for="file1" class="btn btn-default">上传申请院校协议</label>
-              <input id="file1" type="file" style="display:none" (change)="upload($event.target.files,2)">
+              <input id="file1" type="file" style="display:none" accept=".gif,.jpg,.png,.jpeg"(change)="upload($event.target.files,2)">
             </div>
             <div class="col-sm-4 ">
               <label for="file2" class="btn btn-default">上传办理签证协议</label>
-              <input id="file2" type="file" style="display:none" (change)="upload($event.target.files,3)">
+              <input id="file2" type="file" style="display:none" accept=".gif,.jpg,.png,.jpeg" (change)="upload($event.target.files,3)">
+            </div>
+          </div>
+
+          <div class="btn-group mid">
+            <div class="col-sm-6 ">
+              <label for="file4" class="btn btn-default">上传其他资料</label>
+              <input id="file4" type="file" style="display:none" (change)="uploadFile($event.target.files)">
+            </div>
+            <div class="col-sm-6 ">
+              <a class="btn btn-default" [ngClass]="{'disable': status[4]}" [href]="existAgreement.otherFile">我的其他资料</a>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <div class="col-sm-4 ">
+              <a class="btn btn-default" [ngClass]="{'disable': status[1]}" [href]="existAgreement.apply">我的语言培训协议</a>
+            </div>
+            <div class="col-sm-4 ">
+              <a class="btn btn-default" [ngClass]="{'disable': status[2]}" [href]="existAgreement.train">我的申请院校协议</a>
+            </div>
+            <div class="col-sm-4 ">
+              <a class="btn btn-default" [ngClass]="{'disable': status[3]}" [href]="existAgreement.visa">我的办理签证协议</a>
             </div>
           </div>
         </div>

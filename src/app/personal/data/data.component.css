@@ -96,3 +96,11 @@ body, button, dd, div, dl, dt, input, li, ol, p, ul {
   background-color: #9bcdcd;
   display: none;
 }
+.mid {
+  padding-left: 19rem;
+}
+.disable{
+  pointer-events: none;
+  cursor: default;
+  color:gray;
+}
