@@ -3,6 +3,7 @@ import {User} from '../../model/user';
 import {PersonalService} from '../../service/personal.service';
 import {RouterOutlet} from '@angular/router';
 import {RouteAnimation} from '../../animations/route-animations';
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-personal',
@@ -14,7 +15,8 @@ import {RouteAnimation} from '../../animations/route-animations';
 })
 export class PersonalComponent implements OnInit {
 
-  constructor(private service: PersonalService) { }
+  constructor(private service: PersonalService,
+              private userService: UserService) { }
   actives: string[] = ['active', '', '', ''];
   classes: string[] = ['', '', '', '', '', '', ''];
   allLinks: string[] = ['/personal/personal-center',
@@ -32,8 +34,11 @@ export class PersonalComponent implements OnInit {
     this.user = user;
     this.renderProcess();
     this.service.userProcess.subscribe(() => {
-      this.user = JSON.parse(sessionStorage.getItem('user'));
-      this.renderProcess();
+      this.userService.getUserInfo().subscribe(data => {
+        this.user = data.data;
+        sessionStorage.setItem('user', JSON.stringify(this.user));
+        this.renderProcess();
+      });
     });
   }
 
@@ -61,6 +66,9 @@ export class PersonalComponent implements OnInit {
     for (let index = 0; index < process - 1; index ++) {
       this.classes[index] = 'active';
       this.routerLinks[index] = this.allLinks[index];
+      if (index === 1) {
+        this.routerLinks[index] = '/personal/apply-school';
+      }
     }
     this.classes[process - 1] = 'doing';
     this.routerLinks[process - 1] = this.allLinks[process - 1];

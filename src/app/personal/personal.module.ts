@@ -15,6 +15,7 @@ import {TalkModule} from '../talk/talk.module';
 import {DataComponent} from './data/data.component';
 import {ViewComponent} from './view/view.component';
 import {AssessmentPipe} from '../pipe/assessmentPipe';
+import {ApplySchoolComponent} from "./apply-school/apply-school.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AssessmentPipe} from '../pipe/assessmentPipe';
     RecommendComponent,
     DataComponent,
     ViewComponent,
-    AssessmentPipe
+    AssessmentPipe,
+    ApplySchoolComponent
   ],
   imports: [
     CommonModule,

@@ -59,7 +59,12 @@ export class ApplyComponent implements OnInit {
           break;
       }
       return this.service.uploadAgreement(this.agreement);
-    })).subscribe(data => console.log(data.message));
+    })).subscribe(data => {
+      alert(data.message);
+      if (data.code === 200) {
+        this.service.userProcess.next(true);
+      }
+    });
   }
 
   openTalk(): void {

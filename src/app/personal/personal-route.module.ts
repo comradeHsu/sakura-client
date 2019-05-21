@@ -9,6 +9,7 @@ import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
 import {DataComponent} from './data/data.component';
 import {ViewComponent} from "./view/view.component";
+import {ApplySchoolComponent} from "./apply-school/apply-school.component";
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path: 'view',
         component: ViewComponent
+      },
+      {
+        path: 'apply-school',
+        component: ApplySchoolComponent
       }
     ]
   },

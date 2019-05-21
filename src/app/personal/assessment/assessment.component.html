@@ -53,7 +53,7 @@
                     <strong>语言能力：</strong>
                     <div class="ctrl-select" data-toggle="distpicker">
                       <div class="input-group info">
-                        <input type="number" class="form-control"  name="name" [(ngModel)]="assessment.toefl" placeholder="托福分数" value="">
+                        <input type="number" class="form-control"  name="name" [(ngModel)]="assessment.toefl" placeholder="托福分数" value="" max="120" min="0">
                       </div>
                       <div class="ctrl-select-area">
                         <select id="theCity" name="subId" [(ngModel)]="assessment.japaneseLevel">

@@ -30,7 +30,7 @@
           <!--客户左侧菜单栏结束-->
         </div>
       </div>
-      <ul class="nav nav-pills nav-justified step step-progress" id="stepUL">
+      <ul class="nav nav-pills nav-justified step step-progress" id="stepUL" *ngIf="user.userType === 1">
         <li [class]="classes[0]">
           <a [routerLink]="routerLinks[0]" >能力评估<span class="caret"></span></a>
         </li>

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {UserService} from '../../service/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   password: string;
   realName: string;
 
-  constructor(private service: UserService) { }
+  constructor(private service: UserService,
+              private route: Router) { }
 
   ngOnInit() {
   }
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', res.data.token);
         sessionStorage.setItem('user', JSON.stringify(user));
         this.successLogin.emit(user);
+        this.route.navigate(['/index']).then(() => {});
       }
     });
   }

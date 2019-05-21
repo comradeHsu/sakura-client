@@ -45,8 +45,8 @@ export class PersonalService {
   editUser(user: User): Observable<ResponseResult> {
     const url = `http://${environment.domain}/api/user`;
     const token = sessionStorage.getItem('token');
-    this.httpOptions.headers = this.httpOptions.headers.append('Token', token);
-    return this.http.patch(url, user, this.httpOptions).pipe(map(res => res as ResponseResult));
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    return this.http.patch(url, user, {headers}).pipe(map(res => res as ResponseResult));
   }
 
   assessment(data: Assessment): Observable<ResponseResult> {
@@ -110,12 +110,20 @@ export class PersonalService {
     return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
   }
 
-  applySchool(): Observable<ResponseResult> {
+  applySchool(id: number): Observable<ResponseResult> {
     const token: string = sessionStorage.getItem('token');
     const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
     const url = `http://${environment.domain}/api/apply/school`;
-    return this.http.post(url, null, {headers}).pipe(map(res => res as ResponseResult));
+    return this.http.post(url, {applySchool: id}, {headers}).pipe(map(res => res as ResponseResult));
   }
+
+  getApplySchool(): Observable<ResponseResult> {
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    const url = `http://${environment.domain}/api/apply/school`;
+    return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
 
   /**
    * 获取用户的评估信息

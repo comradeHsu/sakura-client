@@ -31,7 +31,7 @@ export class RecommendComponent implements OnInit {
   }
 
   apply(id: number): void {
-    this.service.applySchool().subscribe(data => {
+    this.service.applySchool(id).subscribe(data => {
       alert(data.message);
       const user: User = JSON.parse(sessionStorage.getItem('user'));
       if (user.userProcess < 3) {

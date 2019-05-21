@@ -27,8 +27,8 @@
         </dl>
       </div>
 
-      <div class="uCellHead">家长账号</div>
-      <div class="uCellBody clearfix">
+      <div class="uCellHead" *ngIf="user.userType === 2">家长账号</div>
+      <div class="uCellBody clearfix" *ngIf="user.userType === 1">
         <dl class="uNicName">
           <div class="ctrl-select-area">
             <select name="schoolType" [(ngModel)]="user.parentId">

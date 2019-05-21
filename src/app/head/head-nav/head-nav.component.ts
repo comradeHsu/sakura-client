@@ -3,6 +3,7 @@ import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
 import {PersonalService} from '../../service/personal.service';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-head-nav',
@@ -28,7 +29,8 @@ export class HeadNavComponent implements OnInit {
   realName: string;
 
   constructor(private service: UserService,
-              private personalService: PersonalService) { }
+              private personalService: PersonalService,
+              private route: Router) { }
 
   ngOnInit() {
     const token = sessionStorage.getItem('token');
@@ -62,6 +64,7 @@ export class HeadNavComponent implements OnInit {
       sessionStorage.removeItem('token');
       sessionStorage.removeItem('user');
       this.isLogin = false;
+      this.route.navigate(['/index']).then();
     },
       error => console.log(error));
   }
