@@ -4,8 +4,7 @@ import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import {ResponseResult} from '../model/response';
 import {User} from '../model/user';
-import {Common} from "../model/common";
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

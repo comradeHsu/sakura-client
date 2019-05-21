@@ -16,7 +16,7 @@
           <!--客户左侧菜单栏开始-->
           <dl>
             <dt>
-              <img id="left_header" *ngIf="!user.icon" src="http://www.qianchengriben.com/Public/Home/images/hed-default.png" alt="用户头像">
+              <img id="left_header" *ngIf="!user.icon" src="../../../assets/images/logo.jpg" alt="用户头像">
               <img id="left_header" *ngIf="user.icon" [src]="user.icon" alt="用户头像">
             </dt>
             <dd>{{ user.realName }}</dd>

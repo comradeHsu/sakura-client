@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../../model/user';
+import {Assessment, User} from '../../model/user';
+import {PersonalService} from '../../service/personal.service';
 
 @Component({
   selector: 'app-personal-center',
@@ -8,13 +9,18 @@ import {User} from '../../model/user';
 })
 export class PersonalCenterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PersonalService) {
+    const user: User = JSON.parse(sessionStorage.getItem('user'));
+    this.user = user;
+    if (user.userProcess > 1) {
+      this.service.getAssessment().subscribe(data => this.assessment = data.data);
+    }
+  }
   user: User;
   isTalk: boolean = false;
   style: any = {};
+  assessment: Assessment = new Assessment();
   ngOnInit() {
-    const user: User = JSON.parse(sessionStorage.getItem('user'));
-    this.user = user;
   }
 
   openTalk(): void {

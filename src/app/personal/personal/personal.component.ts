@@ -31,6 +31,10 @@ export class PersonalComponent implements OnInit {
     const user: User = JSON.parse(sessionStorage.getItem('user'));
     this.user = user;
     this.renderProcess();
+    this.service.userProcess.subscribe(() => {
+      this.user = JSON.parse(sessionStorage.getItem('user'));
+      this.renderProcess();
+    });
   }
 
   togger(index: number): void {
@@ -45,11 +49,21 @@ export class PersonalComponent implements OnInit {
     if (temp.find(data => process === data)) {
       process = 5;
     }
+    if (process === 6) {
+      process = 4;
+    }
+    if (process === 7) {
+      process = 6;
+    }
+    if (process === 9) {
+      process = 7;
+    }
     for (let index = 0; index < process - 1; index ++) {
       this.classes[index] = 'active';
       this.routerLinks[index] = this.allLinks[index];
     }
     this.classes[process - 1] = 'doing';
+    this.routerLinks[process - 1] = this.allLinks[process - 1];
   }
 
   sendMessage(index: number) {

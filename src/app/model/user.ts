@@ -30,6 +30,7 @@ export class Assessment {
   schoolGpa: number;
   gpa: number;
   score: number;
+  totalScore: number;
 
   public init(): Assessment {
     this.schoolType = null;

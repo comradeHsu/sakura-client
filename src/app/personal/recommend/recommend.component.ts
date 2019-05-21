@@ -3,6 +3,7 @@ import {School} from '../../model/school';
 import {SchoolService} from '../../service/school.service';
 import {Page} from '../../model/page';
 import {PersonalService} from '../../service/personal.service';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-recommend',
@@ -26,6 +27,18 @@ export class RecommendComponent implements OnInit {
     this.service.getRecommend(this.request).subscribe(data => {
       this.schools = data.data;
       this.totalCount = data.dataCount;
+    });
+  }
+
+  apply(id: number): void {
+    this.service.applySchool().subscribe(data => {
+      alert(data.message);
+      const user: User = JSON.parse(sessionStorage.getItem('user'));
+      if (user.userProcess < 3) {
+        user.userProcess = 3;
+      }
+      sessionStorage.setItem('user', JSON.stringify(user));
+      this.service.userProcess.next(true);
     });
   }
 }

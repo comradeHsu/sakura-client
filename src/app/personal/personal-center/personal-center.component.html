@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-md-10" *ngIf="user.userProcess <= 1">
   <div class="mainContent">
     <div class="uPanel">
       <div class="uPanelHead">
@@ -26,3 +26,62 @@
   </div>
 </div>
 <app-talk *ngIf="isTalk" (closeTalk)="closeTalk($event)"></app-talk>
+<div class="col-md-10" *ngIf="user.userProcess > 1">
+  <ul>
+    <li>
+      <strong>学校名称：</strong>
+      <div class="input-group info">
+        <input type="text" class="form-control"  name="name"  [(ngModel)]="assessment.school" id="search_sh_name" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>学校类型：</strong>
+      <div class="input-group info">
+        <input type="text" class="form-control"  name="schoolType"  [ngModel]="assessment.schoolType | assessment: 1"  disabled>
+      </div>
+    </li>
+    <li>
+      <strong>专业:</strong>
+      <div class="input-group">
+        <input type="text" class="form-control"  name="major" [(ngModel)]="assessment.major" value="" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>托福分数：</strong>
+      <div class="input-group info">
+        <input type="number" class="form-control"  name="toefl" [(ngModel)]="assessment.toefl" value="" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>日语等级：</strong>
+      <div class="input-group info">
+        <input type="text" class="form-control"  name="subId" [ngModel]="assessment.japaneseLevel | assessment: 2" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>学校GPA满分：</strong>
+      <div class="input-group info all">
+        <input type="number" class="form-control"  name="subId" [(ngModel)]="assessment.schoolGpa" value="" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>GPA分数：</strong>
+      <div class="input-group info all nofirst">
+        <input type="number" class="form-control"  name="subId" [(ngModel)]="assessment.gpa" value="" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>个人评估：</strong>
+      <div class="input-group all info nofirst">
+        <input type="text" class="form-control"  name="subId" [ngModel]="assessment.score | assessment: 3" disabled>
+      </div>
+    </li>
+    <li>
+      <strong>评估分数：</strong>
+      <div class="input-group all info nofirst">
+        <input type="text" class="form-control"  name="subId" [ngModel]="assessment.totalScore" disabled>
+      </div>
+    </li>
+  </ul>
+</div>
+

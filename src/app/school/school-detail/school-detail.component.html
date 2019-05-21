@@ -103,9 +103,9 @@
                   <b>意向课程：</b>
                   <div class="cond-area" id="courseDict">
                     <em [class]="actives[0]" (click)="activeStyle(0)">全部</em>
-                    <em [class]="actives[1]" (click)="activeStyle(1)">硕士</em>
-                    <em [class]="actives[2]" (click)="activeStyle(2)">博士</em>
-                    <em [class]="actives[3]" (click)="activeStyle(3)">研究生</em>
+                    <em [class]="actives[1]" (click)="activeStyle(1)">本科</em>
+                    <em [class]="actives[2]" (click)="activeStyle(2)">硕士</em>
+                    <em [class]="actives[3]" (click)="activeStyle(3)">博士</em>
                   </div>
                 </li>
               </ul>
@@ -116,7 +116,7 @@
               <li *ngFor="let major of majors">
                 <div class="left">
                   <em>{{ major.majorName }}</em>
-                  <span>课程：{{ major.degreeType }}</span>
+                  <!--<span>课程：{{ major.degreeType }}</span>-->
                   <span>学位类型：{{ major.degreeType }}</span>
                   <span>说明：{{ major.majorDesc }}</span>
                 </div>

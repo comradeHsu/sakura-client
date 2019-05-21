@@ -31,6 +31,12 @@ export class PersonalService {
    */
   public loginExpired: Subject<boolean> = new Subject<boolean>();
 
+  /**
+   * 用于监听userProcess的变化
+   * type {Subject<any>}
+   */
+  public userProcess: Subject<boolean> = new Subject<boolean>();
+
   getToken(): Observable<ResponseResult> {
     const url = `http://${environment.domain}/qiniu/token`;
     return this.http.get(url).pipe(map(res => res as ResponseResult));
@@ -101,6 +107,24 @@ export class PersonalService {
     const token: string = sessionStorage.getItem('token');
     const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
     const url = `http://${environment.domain}/api/user/agreement`;
+    return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
+  applySchool(): Observable<ResponseResult> {
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
+    const url = `http://${environment.domain}/api/apply/school`;
+    return this.http.post(url, null, {headers}).pipe(map(res => res as ResponseResult));
+  }
+
+  /**
+   * 获取用户的评估信息
+   * returns {Observable<ResponseResult>}
+   */
+  getAssessment(): Observable<ResponseResult> {
+    const url = `http://${environment.domain}/api/user/assessment`;
+    const token: string = sessionStorage.getItem('token');
+    const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
     return this.http.get(url, {headers}).pipe(map(res => res as ResponseResult));
   }
 

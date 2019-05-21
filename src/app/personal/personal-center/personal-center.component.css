@@ -161,3 +161,16 @@ dd {
 .step-progress > li.doing > a:after, .step-progress > li.doing > a:hover:after, .step-progress > li.doing > a:focus:after {
   background-color: #ff7f00;
 }
+ul strong {
+  float: left;
+  width: 10rem;
+}
+.col-md-10 ul {
+  padding-left: 4rem;
+}
+.col-md-10 li {
+  padding-top: 1rem;
+}
+.input-group input{
+  width: 140%;
+}

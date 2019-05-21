@@ -23,6 +23,9 @@ export class AssessmentComponent implements OnInit {
     this.service.assessment(this.assessment).subscribe(data => {
       const user: User = JSON.parse(sessionStorage.getItem('user'));
       user.assessed = true;
+      if (user.userProcess < 2) {
+        user.userProcess = 2;
+      }
       sessionStorage.setItem('user', JSON.stringify(user));
       this.route.navigate(['/personal/recommend']);
     });
