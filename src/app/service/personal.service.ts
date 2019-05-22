@@ -44,7 +44,7 @@ export class PersonalService {
 
   editUser(user: User): Observable<ResponseResult> {
     const url = `http://${environment.domain}/api/user`;
-    const token = sessionStorage.getItem('token');
+    const token: string = sessionStorage.getItem('token');
     const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', Token: token});
     return this.http.patch(url, user, {headers}).pipe(map(res => res as ResponseResult));
   }

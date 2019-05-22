@@ -13,7 +13,7 @@
           </dl>
           <a (click)="openTalk()" class="uMediaLink">立即咨询</a>
         </div>
-        <div class="uMedia clearfix">
+        <div class="uMedia clearfix" *ngIf="user.userType == 1">
           <i class="ibg-evaluate"></i>
           <dl>
             <dt>评估定位</dt>

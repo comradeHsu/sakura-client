@@ -13,6 +13,7 @@ export class AssessmentComponent implements OnInit {
   constructor(private service: PersonalService,
               private route: Router) { }
   assessment: Assessment = new Assessment().init();
+
   ngOnInit() {
   }
 
@@ -62,5 +63,14 @@ export class AssessmentComponent implements OnInit {
       return false;
     }
     return true;
+  }
+
+  validator(): void {
+    if (this.assessment.toefl < 0) {
+      this.assessment.toefl = 0;
+    }
+    if (this.assessment.toefl >  120) {
+      this.assessment.toefl = 120;
+    }
   }
 }

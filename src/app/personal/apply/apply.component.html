@@ -1,10 +1,10 @@
 <div class="col-md-10">
   <div class="mainContent">
     <div class="uPanel">
-      <div *ngIf="!assessed" class="uPanelHead">
+      <div *ngIf="!assessed && user.userType != 2" class="uPanelHead">
         抱歉，您尚未签约。日本留学申请流程尚未开启，您可以：
       </div>
-      <div *ngIf="!assessed" class="uPanelBody clearfix apply status0">
+      <div *ngIf="!assessed && user.userType != 2" class="uPanelBody clearfix apply status0">
         <div class="row">
           <a (click)="openTalk()"  target="_blank" class="col-xs-6">
             <div class="uMedia clearfix">
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div *ngIf="assessed" class="uPanelBody clearfix apply status0">
+      <div *ngIf="assessed || user.userType == 2" class="uPanelBody clearfix apply status0">
         <div class="row">
           <a href="../../../assets/语言培训协议书.docx" target="_blank" class="col-xs-6 col-file" (mouseenter)="show(0)" (mouseleave)="hide(0)">
             <div class="uMedia clearfix">

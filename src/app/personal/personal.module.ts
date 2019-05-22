@@ -8,14 +8,14 @@ import {AccountComponent} from './account/account.component';
 import {HeadModule} from '../head/head.module';
 import {AssessmentComponent} from './assessment/assessment.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginGuard} from '../guard/login.guard';
 import {RecommendComponent} from './recommend/recommend.component';
 import {TalkModule} from '../talk/talk.module';
 import {DataComponent} from './data/data.component';
 import {ViewComponent} from './view/view.component';
 import {AssessmentPipe} from '../pipe/assessmentPipe';
-import {ApplySchoolComponent} from "./apply-school/apply-school.component";
+import {ApplySchoolComponent} from './apply-school/apply-school.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import {ApplySchoolComponent} from "./apply-school/apply-school.component";
     HeadModule,
     NgbModule,
     FormsModule,
-    TalkModule
+    TalkModule,
+    ReactiveFormsModule
   ],
   providers: [
     LoginGuard
